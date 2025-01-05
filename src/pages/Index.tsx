@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
 import { PRODUCTS } from "@/data/products";
 import { Link } from "react-router-dom";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const getFeaturedProducts = (category: string, subcategory?: string) => {
@@ -23,7 +24,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
       <Header />
-      <div className="container mx-auto px-2 md:px-4">
+      <div className="container mx-auto px-2 md:px-4 flex-grow">
         {categories.map(({ name, subcategory, route }) => (
           <div key={`${name}-${subcategory}`}>
             <div className="flex justify-between items-center mb-4 pt-4">
@@ -43,6 +44,7 @@ const Index = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
