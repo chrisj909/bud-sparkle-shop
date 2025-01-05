@@ -5,11 +5,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <AgeVerificationModal />
-      <header className="bg-primary text-white py-5 px-4">
-        <div className="container mx-auto text-center space-y-2">
-          <h1 className="text-2xl md:text-3xl font-bold">Hemp House</h1>
-          <h2 className="text-lg md:text-xl">Smoke Shop & Vape</h2>
-          <p className="text-sm md:text-base text-gray-200">Top Shelf Products & Unmatched Experience</p>
+      <header className="bg-primary text-white py-2 md:py-5 px-4">
+        <div className="container mx-auto text-center space-y-1 md:space-y-2">
+          <h1 className="text-xl md:text-3xl font-bold">Hemp House</h1>
+          <h2 className="text-base md:text-xl">Smoke Shop & Vape</h2>
+          <p className="text-xs md:text-base text-gray-200">Top Shelf Products & Unmatched Experience</p>
         </div>
       </header>
       <main>
