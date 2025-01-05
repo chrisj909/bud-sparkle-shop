@@ -1,19 +1,19 @@
-export type ProductCategory = "Hemp Flower" | "THCA Vapes" | "Gummies" | "Mushrooms";
+export type ProductCategory = "Hemp Flower" | "THCA Vapes" | "Gummies" | "Microdose";
 
 export interface ProductType {
   id: string;
   name: string;
   price: number;
-  imageUrl: string;
+  image_url: string;
   category: ProductCategory;
-  thcContent: string;
-  cbdContent: string;
+  thc_content: string;
+  cbd_content: string;
   terpenes: string[];
-  categoryType: string;
+  category_type: string;
   personality: string;
   description?: string;
-  createdAt?: string;
-  updatedAt?: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export type ProductCardProps = ProductType;
