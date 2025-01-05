@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Cannabis, Flag, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Award, Leaf, ArrowLeft } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export const ProductDetail = () => {
+const ProductDetail = () => {
   const { id } = useParams();
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -234,3 +234,5 @@ export const ProductDetail = () => {
     </div>
   );
 };
+
+export default ProductDetail;
