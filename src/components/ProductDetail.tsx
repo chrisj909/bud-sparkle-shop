@@ -71,14 +71,14 @@ const ProductDetail = () => {
               />
             </div>
             <DesktopProductInfo
-              product={product}
+              product={product as ProductType}
               onAddToCart={handleAddToCart}
             />
           </div>
         </div>
         <div className="md:hidden">
           <MobileProductView
-            product={product}
+            product={product as ProductType}
             onAddToCart={handleAddToCart}
           />
         </div>

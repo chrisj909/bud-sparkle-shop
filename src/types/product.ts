@@ -19,11 +19,12 @@ export interface ProductCardProps {
   id: string;
   name: string;
   price: number;
-  image: string;
+  image_url: string;
   category: string;
-  thcContent: string;
-  cbdContent: string;
+  thc_content: string;
+  cbd_content: string;
   category_type: string;
   terpenes: string[];
   personality: string;
+  description?: string;
 }

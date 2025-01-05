@@ -3,31 +3,21 @@ import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { Cannabis, ShoppingCart, Pill } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
-
-interface ProductCardProps {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-  thcContent: string;
-  cbdContent: string;
-  category_type: string;
-}
+import { ProductCardProps } from "@/types/product";
 
 export const ProductCard = ({ 
   id, 
   name, 
   price, 
-  image, 
-  thcContent,
+  image_url, 
+  thc_content,
   category,
 }: ProductCardProps) => {
   const { toast } = useToast();
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
-    addItem({ id, name, price, image });
+    addItem({ id, name, price, image: image_url });
     toast({
       title: "Added to cart",
       description: `${name} has been added to your cart.`,
@@ -39,7 +29,7 @@ export const ProductCard = ({
       <Link to={`/product/${id}`}>
         <div className="aspect-square overflow-hidden">
           <img
-            src={image}
+            src={image_url}
             alt={name}
             className="w-full h-full object-cover"
           />
@@ -50,7 +40,7 @@ export const ProductCard = ({
             <span className="text-green-700 font-bold">${price.toFixed(2)}</span>
             <div className="flex items-center gap-1 text-gray-600">
               <Pill className="h-4 w-4" />
-              <span>{thcContent}</span>
+              <span>{thc_content}</span>
             </div>
           </div>
         </div>
