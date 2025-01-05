@@ -2,17 +2,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { ProductType, ProductCardProps } from "@/types/product";
 
 const mapToProductCard = (product: ProductType): ProductCardProps => ({
-  id: product.id,
-  name: product.name,
-  price: product.price,
-  image_url: product.image_url,
-  category: product.category,
-  thc_content: product.thc_content,
-  cbd_content: product.cbd_content,
-  category_type: product.category_type,
-  terpenes: product.terpenes,
-  personality: product.personality,
-  description: product.description,
+  ...product
 });
 
 export async function fetchProducts(): Promise<ProductCardProps[]> {

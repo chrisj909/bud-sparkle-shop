@@ -5,7 +5,9 @@ import { Footer } from "@/components/Footer";
 import { ProductType } from "@/types/product";
 
 const Vapes = () => {
-  const products = PRODUCTS.filter(product => product.category === "THCA Vapes") as ProductType[];
+  const products = PRODUCTS.filter(
+    (product): product is ProductType => product.category === "THCA Vapes"
+  );
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">

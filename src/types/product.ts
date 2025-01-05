@@ -14,4 +14,4 @@ export interface ProductType {
   updated_at?: string;
 }
 
-export interface ProductCardProps extends ProductType {}
+export type ProductCardProps = ProductType;
