@@ -116,12 +116,11 @@ export const ProductDetail = () => {
           
           <Button
             onClick={handleAddToCart}
-            className="w-full bg-[#D946EF] hover:bg-[#C026D3] transition-all duration-300 
+            className="w-full bg-[#F97316] hover:bg-[#EA580C] transition-all duration-300 
             transform hover:scale-105 text-lg py-6 flex items-center justify-center gap-2
             md:py-8 md:text-xl
             sm:py-6 sm:text-lg
-            shadow-lg hover:shadow-xl
-            animate-pulse"
+            shadow-lg hover:shadow-xl"
           >
             <ShoppingCart className="h-5 w-5 md:h-6 md:w-6" />
             <span className="font-semibold">Add to Cart</span>
