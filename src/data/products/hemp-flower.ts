@@ -1,4 +1,6 @@
-export const HEMP_FLOWER_PRODUCTS = [
+import { ProductType } from "@/types/product";
+
+export const HEMP_FLOWER_PRODUCTS: ProductType[] = [
   {
     id: "1",
     name: "Gumbo Runtz (8-10-24)",
