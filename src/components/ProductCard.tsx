@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-import { Cannabis, Star, ShoppingCart } from "lucide-react";
+import { Cannabis, Star, ShoppingCart, Leaf } from "lucide-react";
 
 interface ProductCardProps {
   id: string;
@@ -66,7 +66,7 @@ export const ProductCard = ({
             </div>
           </div>
           <p className="text-sm text-gray-600 flex items-center gap-1">
-            <LeafyGreen className="h-4 w-4" />
+            <Leaf className="h-4 w-4" />
             {category_type}
           </p>
         </div>
