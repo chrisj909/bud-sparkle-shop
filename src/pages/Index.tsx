@@ -1,7 +1,7 @@
 import { AgeVerificationModal } from "@/components/AgeVerificationModal";
 import { ProductGrid } from "@/components/ProductGrid";
 import { useCart } from "@/contexts/CartContext";
-import { ShoppingCart, Home, Info, Mail } from "lucide-react";
+import { ShoppingCart, Home, Info, Mail, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "@/data/products";
