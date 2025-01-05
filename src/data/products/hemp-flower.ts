@@ -1,6 +1,6 @@
 import { ProductType } from "@/types/product";
 
-export const HEMP_FLOWER_PRODUCTS: ProductType[] = [
+export const HEMP_FLOWER_PRODUCTS = [
   {
     id: "1",
     name: "Gumbo Runtz (8-10-24)",
@@ -66,4 +66,4 @@ export const HEMP_FLOWER_PRODUCTS: ProductType[] = [
     personality: "Energizing & Clear",
     description: "True to its name, this strain provides an uplifting experience with fresh, citrusy notes.",
   }
-];
+] as const satisfies ProductType[];
