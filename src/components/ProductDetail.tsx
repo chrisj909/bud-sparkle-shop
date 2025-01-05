@@ -4,6 +4,7 @@ import { PRODUCTS } from "@/data/products";
 import { useParams, useNavigate } from "react-router-dom";
 import { Cannabis, Flag, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Award, Leaf, ArrowLeft } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Footer } from "@/components/Footer";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="container mx-auto md:px-8 md:py-8">
+    <div className="min-h-screen flex flex-col">
       {/* Mobile View */}
       <div className="relative h-screen md:hidden">
         {/* Back Button */}
@@ -81,7 +82,7 @@ const ProductDetail = () => {
       </div>
 
       {/* Desktop View */}
-      <div className="hidden md:block">
+      <div className="hidden md:block flex-grow">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg md:rounded-xl shadow-lg">
@@ -231,6 +232,7 @@ const ProductDetail = () => {
           </Tabs>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
