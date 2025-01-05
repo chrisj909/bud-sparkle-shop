@@ -148,7 +148,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
-              <span className="text-sm font-medium text-[#39FF14]">Hemp House</span>
+              <span className="text-sm font-medium text-gray-800">Hemp House Smoke Shop CBD + Vape</span>
               <a href="tel:205.326.7888" className="text-sm text-gray-800 hover:text-gray-600 transition-colors">205.326.7888</a>
               <span className="text-xs text-gray-500">© 2024 Hemp House. Must be 21 or older.</span>
             </div>
