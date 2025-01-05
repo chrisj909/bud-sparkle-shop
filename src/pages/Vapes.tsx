@@ -2,9 +2,10 @@ import { ProductCard } from "@/components/ProductCard";
 import { PRODUCTS } from "@/data/products";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ProductType } from "@/types/product";
 
 const Vapes = () => {
-  const products = PRODUCTS.filter(product => product.category === "THCA Vapes");
+  const products = PRODUCTS.filter(product => product.category === "THCA Vapes") as ProductType[];
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
