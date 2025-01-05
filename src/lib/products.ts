@@ -25,7 +25,7 @@ export async function fetchProducts(): Promise<ProductCardProps[]> {
     throw error;
   }
 
-  return data.map(mapToProductCard);
+  return (data as ProductType[]).map(mapToProductCard);
 }
 
 export async function fetchProductsByCategory(category: string): Promise<ProductCardProps[]> {
@@ -39,7 +39,7 @@ export async function fetchProductsByCategory(category: string): Promise<Product
     throw error;
   }
 
-  return data.map(mapToProductCard);
+  return (data as ProductType[]).map(mapToProductCard);
 }
 
 export async function fetchProductById(id: string): Promise<ProductCardProps | null> {
@@ -54,5 +54,5 @@ export async function fetchProductById(id: string): Promise<ProductCardProps | n
     throw error;
   }
 
-  return data ? mapToProductCard(data) : null;
+  return data ? mapToProductCard(data as ProductType) : null;
 }

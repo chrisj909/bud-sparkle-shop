@@ -1,9 +1,10 @@
+import { ProductType } from "@/types/product";
 import { HEMP_FLOWER_PRODUCTS } from './hemp-flower';
 import { VAPE_PRODUCTS } from './vapes';
 import { GUMMY_PRODUCTS } from './gummies';
 import { MICRODOSE_PRODUCTS } from './microdose';
 
-export const PRODUCTS = [
+export const PRODUCTS: ProductType[] = [
   ...HEMP_FLOWER_PRODUCTS,
   ...VAPE_PRODUCTS,
   ...GUMMY_PRODUCTS,
