@@ -1,8 +1,9 @@
 import { AgeVerificationModal } from "@/components/AgeVerificationModal";
 import { ProductGrid } from "@/components/ProductGrid";
 import { useCart } from "@/contexts/CartContext";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Facebook, Instagram, Discord } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import {
   Sheet,
   SheetContent,
@@ -35,6 +36,12 @@ const Index = () => {
             </div>
             
             <div className="flex items-center gap-4">
+              <nav className="hidden md:flex gap-6 text-white mr-6">
+                <Link to="/" className="hover:text-gray-200">Home</Link>
+                <Link to="/about" className="hover:text-gray-200">About</Link>
+                <Link to="/contact" className="hover:text-gray-200">Contact</Link>
+              </nav>
+              
               <div className="hidden md:block text-right text-white">
                 <p className="leading-snug">Top Shelf Products &</p>
                 <p className="leading-snug">Unmatched Experience</p>
@@ -104,8 +111,40 @@ const Index = () => {
         <ProductGrid />
       </main>
       <footer className="bg-primary text-white py-8 mt-16">
-        <div className="container mx-auto text-center">
-          <p>© 2024 Hemp House. Must be 21 or older.</p>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="font-medium">Hemp House</p>
+              <p className="text-sm opacity-80">120 Doug Baker BLVD, STE 110</p>
+              <p className="text-sm opacity-80">Hoover, AL 35242</p>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-sm opacity-80">
+                <a href="tel:205.326.7888" className="hover:opacity-100">205.326.7888</a>
+              </p>
+              <p className="text-sm opacity-80">
+                <a href="mailto:RedMountainHemp@gmail.com" className="hover:opacity-100">
+                  RedMountainHemp@gmail.com
+                </a>
+              </p>
+            </div>
+            
+            <div className="flex gap-4">
+              <a href="#" className="opacity-80 hover:opacity-100">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="opacity-80 hover:opacity-100">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="opacity-80 hover:opacity-100">
+                <Discord className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+          <div className="text-center mt-6 text-sm opacity-80">
+            <p>© 2024 Hemp House. Must be 21 or older.</p>
+          </div>
         </div>
       </footer>
     </div>

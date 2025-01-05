@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import { ProductDetail } from "./components/ProductDetail";
 import { Toaster } from "./components/ui/toaster";
 import { CartProvider } from "./contexts/CartContext";
@@ -10,6 +12,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
         <Toaster />
