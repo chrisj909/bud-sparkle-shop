@@ -3,7 +3,7 @@ export interface ProductType {
   name: string;
   price: number;
   image_url: string;
-  category: "Hemp Flower" | "THCA Vapes" | "Gummies" | "Mushrooms";
+  category: "Hemp Flower" | "THCA Vapes" | "Gummies" | "Microdose";
   thc_content: string;
   cbd_content: string;
   terpenes: string[];

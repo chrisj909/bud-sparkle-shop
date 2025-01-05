@@ -1,14 +1,14 @@
 import { HEMP_FLOWER_PRODUCTS } from './hemp-flower';
 import { VAPE_PRODUCTS } from './vapes';
 import { GUMMY_PRODUCTS } from './gummies';
-import { MUSHROOM_PRODUCTS } from './mushrooms';
+import { MICRODOSE_PRODUCTS } from './microdose';
 
 export const PRODUCTS = [
   ...HEMP_FLOWER_PRODUCTS,
   ...VAPE_PRODUCTS,
   ...GUMMY_PRODUCTS,
-  ...MUSHROOM_PRODUCTS,
+  ...MICRODOSE_PRODUCTS,
 ];
 
-export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Mushrooms"] as const;
+export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"] as const;
 export type ProductCategory = typeof CATEGORIES[number];
