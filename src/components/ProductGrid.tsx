@@ -28,13 +28,13 @@ export const ProductGrid = () => {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="flex gap-4 mb-8 overflow-x-auto pb-4">
+    <div className="container mx-auto px-4 py-4 md:py-8">
+      <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 overflow-x-auto pb-2 scrollbar-hide">
         {CATEGORIES.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full transition-colors flex items-center gap-2 ${
+            className={`px-3 md:px-4 py-2 rounded-full transition-colors flex items-center gap-2 whitespace-nowrap text-sm md:text-base ${
               selectedCategory === category
                 ? "bg-primary text-white"
                 : "bg-accent hover:bg-accent-dark"
@@ -45,7 +45,7 @@ export const ProductGrid = () => {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} {...product} />
         ))}

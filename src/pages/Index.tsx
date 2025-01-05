@@ -6,14 +6,18 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <AgeVerificationModal />
       <header className="bg-primary text-white py-5 px-4">
-        <div className="container mx-auto"></div>
+        <div className="container mx-auto text-center space-y-2">
+          <h1 className="text-2xl md:text-3xl font-bold">Hemp House</h1>
+          <h2 className="text-lg md:text-xl">Smoke Shop & Vape</h2>
+          <p className="text-sm md:text-base text-gray-200">Top Shelf Products & Unmatched Experience</p>
+        </div>
       </header>
       <main>
         <ProductGrid />
       </main>
       <footer className="bg-primary text-white py-8 mt-16">
         <div className="container mx-auto text-center">
-          <p>© 2024 Your Shop Name. Must be 21 or older.</p>
+          <p>© 2024 Hemp House. Must be 21 or older.</p>
         </div>
       </footer>
     </div>
