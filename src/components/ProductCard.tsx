@@ -45,8 +45,7 @@ export const ProductCard = ({
         <div className="p-3 space-y-2">
           <h3 className="font-semibold text-lg md:text-xl truncate">{name}</h3>
           <div className="flex justify-between items-center">
-            <p className="text-primary-light font-bold text-lg flex items-center gap-1">
-              <Star className="h-4 w-4 fill-primary-light" />
+            <p className="text-primary-light font-bold text-lg">
               ${price.toFixed(2)}
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-600">
