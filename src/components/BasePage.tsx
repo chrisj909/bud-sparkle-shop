@@ -10,7 +10,9 @@ interface BasePageProps {
 
 export const BasePage = ({ title, category, subcategory }: BasePageProps) => {
   const products = PRODUCTS.filter(
-    product => product.category === category && product.subcategory === subcategory
+    product => 
+      product.category === category && 
+      product.subcategory === subcategory
   );
 
   return (
