@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
 import { PRODUCTS } from "@/data/products";
 import { Link } from "react-router-dom";
-import { Footer } from "../components/Footer";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const getFeaturedProducts = (category: string, subcategory?: string) => {
