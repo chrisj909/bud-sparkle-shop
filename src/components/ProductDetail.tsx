@@ -3,6 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import { PRODUCTS } from "@/data/products";
 import { useParams } from "react-router-dom";
 import { Cannabis, Star, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Percent, Leaf } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -78,15 +79,7 @@ export const ProductDetail = () => {
               <p>PERSONALITY: {product.personality}</p>
             </div>
           </div>
-          
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold flex items-center gap-2">
-              <Flower className="h-5 w-5 text-primary" />
-              WHAT'S IN A STRAIN?
-            </h2>
-            <p className="text-gray-700">{product.description}</p>
-          </div>
-          
+
           <div className="grid grid-cols-4 gap-4 py-6">
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
@@ -126,6 +119,59 @@ export const ProductDetail = () => {
             <span className="font-semibold">Add to Cart</span>
           </Button>
         </div>
+      </div>
+
+      <div className="mt-12">
+        <Tabs defaultValue="description" className="w-full">
+          <TabsList className="grid w-full grid-cols-4 bg-accent">
+            <TabsTrigger value="description" className="text-sm md:text-base">
+              Description
+            </TabsTrigger>
+            <TabsTrigger value="lab-results" className="text-sm md:text-base">
+              Lab Results Page
+            </TabsTrigger>
+            <TabsTrigger value="faqs" className="text-sm md:text-base">
+              FAQs - THCA Flower
+            </TabsTrigger>
+            <TabsTrigger value="shipping" className="text-sm md:text-base">
+              Processing & Shipping Times
+            </TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="description" className="mt-6 p-6 border rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">HAVE YOU MET ZAZA?</h2>
+            <div className="space-y-4 text-gray-700">
+              <p>
+                As part of the ZAZA Exotic Indoor THCA Flower line, {product.name} is grown with meticulous care to ensure the highest quality. 
+                These premium indoor buds are grown according to Living Soil cultivation standards to enhance their potency, flavor, and overall appeal.
+              </p>
+              <p>
+                This cultivation method harnesses the true rhythms of Mother Nature, producing unparalleled flower quality, potency, 
+                and an experience that is second to none. Our flower is a true celebration of the natural harmony between plant and soil, 
+                benefiting from the careful encouragement of the soil's beneficial bacteria and mycorrhizal fungi.
+              </p>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="lab-results" className="mt-6 p-6 border rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Lab Results</h2>
+            <p className="text-gray-700">Lab results and certificates of analysis coming soon.</p>
+          </TabsContent>
+          
+          <TabsContent value="faqs" className="mt-6 p-6 border rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-4 text-gray-700">
+              <p>Common questions about THCA flower and their answers will be displayed here.</p>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="shipping" className="mt-6 p-6 border rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Processing & Shipping Information</h2>
+            <div className="space-y-4 text-gray-700">
+              <p>Details about processing times and shipping options will be displayed here.</p>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
