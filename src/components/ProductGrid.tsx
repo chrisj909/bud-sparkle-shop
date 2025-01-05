@@ -8,10 +8,6 @@ import { ProductType } from "@/types/product";
 export const ProductGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>(CATEGORIES[0]);
 
-  const filteredProducts = PRODUCTS.filter(
-    product => product.category === selectedCategory
-  );
-
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case "Hemp Flower":
@@ -33,8 +29,8 @@ export const ProductGrid = () => {
         <div key={category} id={category.toLowerCase().replace(/\s+/g, '-')}>
           <h2 className="text-2xl font-bold mb-4 pt-4">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
-            {PRODUCTS.filter(product => product.category === category).map((product: ProductType) => (
-              <ProductCard key={product.id} {...product} />
+            {PRODUCTS.filter(product => product.category === category).map((product) => (
+              <ProductCard key={product.id} {...product as ProductType} />
             ))}
           </div>
         </div>

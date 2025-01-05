@@ -2,9 +2,15 @@ import { ProductCard } from "@/components/ProductCard";
 import { PRODUCTS } from "@/data/products";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ProductType } from "@/types/product";
 
 const HempFlower = () => {
-  const products = PRODUCTS.filter(product => product.category === "Hemp Flower");
+  const products = PRODUCTS.filter(product => product.category === "Hemp Flower").map(product => ({
+    ...product,
+    image_url: product.image_url,
+    thc_content: product.thc_content,
+    cbd_content: product.cbd_content
+  })) as ProductType[];
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
