@@ -28,7 +28,7 @@ const Index = () => {
   const scrollToSection = (categoryId: string) => {
     const element = document.getElementById(categoryId);
     if (element) {
-      const headerOffset = 120; // Account for fixed header height
+      const headerOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -128,7 +128,7 @@ const Index = () => {
               {CATEGORIES.map((category) => (
                 <button
                   key={category}
-                  onClick={() => scrollToSection(category.toLowerCase().replace(' ', '-'))}
+                  onClick={() => scrollToSection(category.toLowerCase().replace(/\s+/g, '-'))}
                   className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
                 >
                   <span className="text-base">{getCategoryIcon(category)}</span>
