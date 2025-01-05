@@ -16,7 +16,7 @@ const Index = () => {
   const { items, totalItems, totalPrice, removeItem } = useCart();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-accent to-white">
       <AgeVerificationModal />
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="container mx-auto px-4">
