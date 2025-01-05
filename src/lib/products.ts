@@ -1,7 +1,20 @@
 import { supabase } from "@/integrations/supabase/client";
-import { ProductType } from "@/types/product";
+import { ProductType, ProductCardProps } from "@/types/product";
 
-export async function fetchProducts(): Promise<ProductType[]> {
+const mapToProductCard = (product: ProductType): ProductCardProps => ({
+  id: product.id,
+  name: product.name,
+  price: product.price,
+  image: product.image_url,
+  category: product.category,
+  thcContent: product.thc_content,
+  cbdContent: product.cbd_content,
+  category_type: product.category_type,
+  terpenes: product.terpenes,
+  personality: product.personality,
+});
+
+export async function fetchProducts(): Promise<ProductCardProps[]> {
   const { data, error } = await supabase
     .from('products')
     .select('*');
@@ -11,10 +24,10 @@ export async function fetchProducts(): Promise<ProductType[]> {
     throw error;
   }
 
-  return data;
+  return data.map(mapToProductCard);
 }
 
-export async function fetchProductsByCategory(category: string): Promise<ProductType[]> {
+export async function fetchProductsByCategory(category: string): Promise<ProductCardProps[]> {
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -25,10 +38,10 @@ export async function fetchProductsByCategory(category: string): Promise<Product
     throw error;
   }
 
-  return data;
+  return data.map(mapToProductCard);
 }
 
-export async function fetchProductById(id: string): Promise<ProductType | null> {
+export async function fetchProductById(id: string): Promise<ProductCardProps | null> {
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -40,5 +53,5 @@ export async function fetchProductById(id: string): Promise<ProductType | null> 
     throw error;
   }
 
-  return data;
+  return data ? mapToProductCard(data) : null;
 }
