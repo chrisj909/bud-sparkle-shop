@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ProductCard } from "./ProductCard";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 import { Leaf, Cigarette, Candy, Sparkles } from "lucide-react";
