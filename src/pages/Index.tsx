@@ -104,28 +104,27 @@ const Index = () => {
         <ProductGrid />
       </main>
 
-      <footer className="border-t border-gray-100 py-8 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <div className="flex items-center gap-8">
-              <span>Hemp House</span>
-              <a href="tel:205.326.7888" className="hover:text-gray-900">205.326.7888</a>
-              <a href="mailto:RedMountainHemp@gmail.com" className="hover:text-gray-900">RedMountainHemp@gmail.com</a>
+      <footer className="border-t border-gray-100 mt-16">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-6">
+              <span className="text-sm font-medium text-gray-900">Hemp House</span>
+              <a href="tel:205.326.7888" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">205.326.7888</a>
             </div>
             
-            <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-gray-900">
-                <Facebook className="w-4 h-4" />
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors">
+                <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-gray-900">
-                <Instagram className="w-4 h-4" />
+              <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-gray-900">
-                <MessageCircle className="w-4 h-4" />
+              <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors">
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
-          <p className="text-xs text-center text-gray-400 mt-6">
+          <p className="text-xs text-center text-gray-400 mt-4">
             © 2024 Hemp House. Must be 21 or older.
           </p>
         </div>
