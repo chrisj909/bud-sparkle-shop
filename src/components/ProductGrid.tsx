@@ -1,45 +1,15 @@
 import { useState } from "react";
 import { ProductCard } from "./ProductCard";
+import { PRODUCTS } from "@/data/products";
 
-const SAMPLE_PRODUCTS = [
-  {
-    id: "1",
-    name: "Premium CBD Oil",
-    price: 49.99,
-    image: "/placeholder.svg",
-    category: "CBD",
-  },
-  {
-    id: "2",
-    name: "Hemp Rolling Papers",
-    price: 4.99,
-    image: "/placeholder.svg",
-    category: "Accessories",
-  },
-  {
-    id: "3",
-    name: "Glass Water Pipe",
-    price: 89.99,
-    image: "/placeholder.svg",
-    category: "Glassware",
-  },
-  {
-    id: "4",
-    name: "Herbal Grinder",
-    price: 24.99,
-    image: "/placeholder.svg",
-    category: "Accessories",
-  },
-];
-
-const CATEGORIES = ["All", "CBD", "Accessories", "Glassware"];
+const CATEGORIES = ["All", "Sativa", "Indica", "Hybrid"];
 
 export const ProductGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProducts = selectedCategory === "All"
-    ? SAMPLE_PRODUCTS
-    : SAMPLE_PRODUCTS.filter(product => product.category === selectedCategory);
+    ? PRODUCTS
+    : PRODUCTS.filter(product => product.category_type.toLowerCase().includes(selectedCategory.toLowerCase()));
 
   return (
     <div className="container mx-auto py-8">
