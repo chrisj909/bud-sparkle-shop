@@ -122,14 +122,14 @@ const Index = () => {
         {/* Product Navigation */}
         <div className="border-t border-gray-100 bg-white/60">
           <div className="container mx-auto px-4">
-            <nav className="flex items-center justify-center md:justify-start gap-8 py-3 overflow-x-auto scrollbar-hide">
+            <nav className="flex items-center justify-center md:justify-start gap-6 py-2 overflow-x-auto scrollbar-hide">
               {CATEGORIES.map((category) => (
                 <a
                   key={category}
                   href={`#${category.toLowerCase().replace(' ', '-')}`}
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap transition-colors"
+                  className="flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-900 whitespace-nowrap transition-colors"
                 >
-                  <span className="text-lg">{getCategoryIcon(category)}</span>
+                  <span className="text-base">{getCategoryIcon(category)}</span>
                   <span>{category}</span>
                 </a>
               ))}
