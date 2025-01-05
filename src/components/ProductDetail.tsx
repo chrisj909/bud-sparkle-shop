@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { PRODUCTS } from "@/data/products";
-import { useParams } from "react-router-dom";
-import { Cannabis, Flag, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Award, Leaf } from "lucide-react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Cannabis, Flag, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Award, Leaf, ArrowLeft } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const ProductDetail = () => {
   const { id } = useParams();
   const { toast } = useToast();
+  const navigate = useNavigate();
   
   const product = PRODUCTS.find(p => p.id === id);
   
@@ -24,6 +25,16 @@ export const ProductDetail = () => {
 
   return (
     <div className="container mx-auto px-4 md:px-8 py-4 md:py-8">
+      {/* Back Button - Only visible on mobile */}
+      <Button 
+        variant="ghost" 
+        className="md:hidden mb-4 -ml-2 text-gray-600 hover:text-gray-900"
+        onClick={() => navigate(-1)}
+      >
+        <ArrowLeft className="h-5 w-5 mr-1" />
+        Back
+      </Button>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {/* Image Section - Larger on mobile */}
         <div className="space-y-4">
