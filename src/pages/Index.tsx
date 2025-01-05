@@ -28,7 +28,7 @@ const Index = () => {
   const scrollToSection = (categoryId: string) => {
     const element = document.getElementById(categoryId);
     if (element) {
-      const headerOffset = 120; // Account for fixed header height
+      const headerOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -126,14 +126,21 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-center md:justify-start gap-6 py-2 overflow-x-auto scrollbar-hide">
               {CATEGORIES.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => scrollToSection(category.toLowerCase().replace(/\s+/g, '-'))}
-                  className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
-                >
-                  <span className="text-base">{getCategoryIcon(category)}</span>
-                  <span>{category}</span>
-                </button>
+                <div key={category} className="flex gap-4">
+                  <button
+                    onClick={() => scrollToSection(category.toLowerCase().replace(/\s+/g, '-'))}
+                    className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
+                  >
+                    <span className="text-base">{getCategoryIcon(category)}</span>
+                    <span>View {category}</span>
+                  </button>
+                  <Link
+                    to={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
+                  >
+                    <span>All {category}</span>
+                  </Link>
+                </div>
               ))}
             </nav>
           </div>
