@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { Cannabis, Star, ShoppingCart } from "lucide-react";
 
 interface ProductCardProps {
   id: string;
@@ -43,22 +44,38 @@ export const ProductCard = ({
           />
         </div>
         <div className="space-y-2">
-          <p className="text-sm text-gray-500 uppercase">{category}</p>
+          <div className="flex items-center gap-2">
+            <Cannabis className="h-4 w-4 text-primary" />
+            <p className="text-sm text-gray-500 uppercase">{category}</p>
+          </div>
           <h3 className="font-semibold text-xl">{name}</h3>
           <div className="flex justify-between items-center">
-            <p className="text-primary-light font-bold text-lg">${price.toFixed(2)}</p>
+            <p className="text-primary-light font-bold text-lg flex items-center gap-1">
+              <Star className="h-4 w-4 fill-primary-light" />
+              ${price.toFixed(2)}
+            </p>
             <div className="text-sm text-gray-600">
-              <p>THC: {thcContent}</p>
-              <p>CBD: {cbdContent}</p>
+              <p className="flex items-center gap-1">
+                <Cannabis className="h-3 w-3" />
+                THC: {thcContent}
+              </p>
+              <p className="flex items-center gap-1">
+                <Cannabis className="h-3 w-3" />
+                CBD: {cbdContent}
+              </p>
             </div>
           </div>
-          <p className="text-sm text-gray-600">{category_type}</p>
+          <p className="text-sm text-gray-600 flex items-center gap-1">
+            <LeafyGreen className="h-4 w-4" />
+            {category_type}
+          </p>
         </div>
       </Link>
       <Button
         onClick={handleAddToCart}
-        className="w-full bg-primary hover:bg-primary-hover transition-colors mt-4"
+        className="w-full bg-primary hover:bg-primary-hover transition-colors mt-4 flex items-center justify-center gap-2"
       >
+        <ShoppingCart className="h-4 w-4" />
         Add to Cart
       </Button>
     </div>
