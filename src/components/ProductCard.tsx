@@ -21,13 +21,10 @@ export const ProductCard = ({
   price, 
   image, 
   thcContent,
-  cbdContent,
   category,
-  category_type
 }: ProductCardProps) => {
   const { toast } = useToast();
-  const { addItem, getItemQuantity } = useCart();
-  const quantity = getItemQuantity(id);
+  const { addItem } = useCart();
 
   const handleAddToCart = () => {
     addItem({ id, name, price, image });
@@ -37,51 +34,34 @@ export const ProductCard = ({
     });
   };
 
-  const getContentIcon = () => {
-    switch (category) {
-      case "Hemp Flower":
-        return <Cannabis className="h-3 w-3 md:h-4 md:w-4" />;
-      case "Gummies":
-      case "Mushrooms":
-        return <Pill className="h-3 w-3 md:h-4 md:w-4" />;
-      default:
-        return <Cannabis className="h-3 w-3 md:h-4 md:w-4" />;
-    }
-  };
-
   return (
-    <div className="bg-card hover:bg-card-hover rounded-lg overflow-hidden transition-all duration-300 animate-slideUp">
-      <Link to={`/product/${id}`} className="block">
-        <div className="aspect-square md:aspect-[4/3] h-[80vh] md:h-auto overflow-hidden">
+    <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+      <Link to={`/product/${id}`}>
+        <div className="aspect-square overflow-hidden">
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="p-2 md:p-3 space-y-1 md:space-y-2">
-          <h3 className="font-semibold text-base md:text-xl truncate">{name}</h3>
-          <div className="flex justify-between items-center">
-            <p className="text-primary-light font-bold text-lg">
-              ${price.toFixed(2)}
-            </p>
-            <div className="flex items-center gap-1 md:gap-2 text-xs md:text-sm text-gray-600">
-              {getContentIcon()}
+        <div className="p-4">
+          <h3 className="text-lg font-semibold mb-2">{name}</h3>
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-green-700 font-bold">${price.toFixed(2)}</span>
+            <div className="flex items-center gap-1 text-gray-600">
+              <Pill className="h-4 w-4" />
               <span>{thcContent}</span>
             </div>
           </div>
         </div>
       </Link>
-      <div className="px-2 md:px-3 pb-2 md:pb-3">
+      <div className="px-4 pb-4">
         <Button
           onClick={handleAddToCart}
-          className="w-full bg-[#F97316] hover:bg-[#EA580C] transition-all duration-300 
-          transform hover:scale-105 flex items-center justify-center gap-2
-          py-1 md:py-4 text-sm md:text-base font-semibold
-          shadow-lg hover:shadow-xl"
+          className="w-full bg-[#F97316] hover:bg-[#EA580C] text-white font-medium"
         >
-          <ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />
-          <span>{quantity > 0 ? `Add Another (${quantity} in cart)` : 'Add to Cart'}</span>
+          <ShoppingCart className="mr-2 h-4 w-4" />
+          Add to Cart
         </Button>
       </div>
     </div>
