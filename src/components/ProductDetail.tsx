@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { PRODUCTS } from "@/data/products";
 import { useParams } from "react-router-dom";
-import { Cannabis, Star, ShoppingCart, LeafyGreen, ThumbsUp, Flower } from "lucide-react";
+import { Cannabis, Star, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Percent } from "lucide-react";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -91,19 +91,27 @@ export const ProductDetail = () => {
           
           <div className="grid grid-cols-4 gap-4 py-6">
             <div className="text-center">
-              <img src="/placeholder.svg" alt="Organically Grown" className="w-16 h-16 mx-auto mb-2" />
+              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Leaf className="w-8 h-8 text-primary" />
+              </div>
               <p className="text-sm">Organically Grown</p>
             </div>
             <div className="text-center">
-              <img src="/placeholder.svg" alt="Made in USA" className="w-16 h-16 mx-auto mb-2" />
+              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Star className="w-8 h-8 text-primary" />
+              </div>
               <p className="text-sm">Made in USA</p>
             </div>
             <div className="text-center">
-              <img src="/placeholder.svg" alt="Premium Quality" className="w-16 h-16 mx-auto mb-2" />
+              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Percent className="w-8 h-8 text-primary" />
+              </div>
               <p className="text-sm">Premium Quality</p>
             </div>
             <div className="text-center">
-              <img src="/placeholder.svg" alt="Third Party Tested" className="w-16 h-16 mx-auto mb-2" />
+              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Check className="w-8 h-8 text-primary" />
+              </div>
               <p className="text-sm">Third Party Tested</p>
             </div>
           </div>
