@@ -52,12 +52,10 @@ export const ProductDetail = () => {
         
         <div className="space-y-6">
           <div>
-            <h1 className="text-4xl font-bold mb-2 flex items-center gap-2">
-              <Cannabis className="h-8 w-8 text-primary" />
+            <h1 className="text-4xl font-bold mb-2">
               {product.name}
             </h1>
-            <p className="text-2xl font-semibold text-primary-light flex items-center gap-2">
-              <Star className="h-6 w-6 fill-primary-light" />
+            <p className="text-2xl font-semibold text-primary-light">
               ${product.price.toFixed(2)}
             </p>
           </div>
