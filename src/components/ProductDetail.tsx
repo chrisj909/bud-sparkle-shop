@@ -73,14 +73,18 @@ export const ProductDetail = () => {
               <Cannabis className="h-5 w-5 text-green-500" />
               <p className="text-sm md:text-base">{product.thcContent}</p>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2 col-span-2 md:col-span-1">
               <Flower className="h-5 w-5 text-green-500" />
-              <p className="text-sm md:text-base hidden md:block">MAJOR TERPENES: </p>
-              <p className="text-sm md:text-base">{product.terpenes.join(", ")}</p>
+              <div className="flex flex-wrap gap-1 justify-center md:justify-start">
+                {product.terpenes.map((terpene, index) => (
+                  <span key={terpene} className="text-sm md:text-base">
+                    {terpene}{index < product.terpenes.length - 1 ? "," : ""}&nbsp;
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2 col-span-2 md:col-span-1">
               <ThumbsUp className="h-5 w-5 text-green-500" />
-              <p className="text-sm md:text-base hidden md:block">PERSONALITY: </p>
               <p className="text-sm md:text-base">{product.personality}</p>
             </div>
           </div>
