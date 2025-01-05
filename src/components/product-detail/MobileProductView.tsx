@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, ArrowLeft } from "lucide-react";
+import { ShoppingCart, ArrowLeft, Cannabis } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ProductType } from "@/types/product";
 
