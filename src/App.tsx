@@ -7,6 +7,10 @@ import { CartProvider } from "./contexts/CartContext";
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const HempFlower = lazy(() => import("./pages/HempFlower"));
+const Vapes = lazy(() => import("./pages/Vapes"));
+const Gummies = lazy(() => import("./pages/Gummies"));
+const Microdose = lazy(() => import("./pages/Microdose"));
 const ProductDetail = lazy(() => import("./components/ProductDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -19,6 +23,10 @@ function App() {
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/hemp-flower" element={<HempFlower />} />
+            <Route path="/vapes" element={<Vapes />} />
+            <Route path="/gummies" element={<Gummies />} />
+            <Route path="/microdose" element={<Microdose />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
