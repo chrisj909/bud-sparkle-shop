@@ -73,10 +73,15 @@ export const ProductCard = ({
       </Link>
       <Button
         onClick={handleAddToCart}
-        className="w-full bg-primary hover:bg-primary-hover transition-colors mt-4 flex items-center justify-center gap-2"
+        className="w-full bg-[#8B5CF6] hover:bg-[#7C3AED] transition-all duration-300 
+        transform hover:scale-105 mt-4 flex items-center justify-center gap-2
+        md:py-6 md:text-lg
+        sm:py-4 sm:text-base
+        shadow-lg hover:shadow-xl
+        animate-pulse"
       >
-        <ShoppingCart className="h-4 w-4" />
-        Add to Cart
+        <ShoppingCart className="h-4 w-4 md:h-5 md:w-5" />
+        <span className="font-semibold">Add to Cart</span>
       </Button>
     </div>
   );
