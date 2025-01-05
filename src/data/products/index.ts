@@ -10,5 +10,5 @@ export const PRODUCTS = [
   ...MICRODOSE_PRODUCTS,
 ];
 
-export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"] as const;
+export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Mushrooms"] as const;
 export type ProductCategory = typeof CATEGORIES[number];

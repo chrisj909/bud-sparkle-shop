@@ -42,7 +42,7 @@ export const ProductCard = ({
       case "Hemp Flower":
         return <Cannabis className="h-3 w-3 md:h-4 md:w-4" />;
       case "Gummies":
-      case "Microdose":
+      case "Mushrooms":
         return <Pill className="h-3 w-3 md:h-4 md:w-4" />;
       default:
         return <Cannabis className="h-3 w-3 md:h-4 md:w-4" />;

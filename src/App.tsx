@@ -10,7 +10,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const HempFlower = lazy(() => import("./pages/HempFlower"));
 const Vapes = lazy(() => import("./pages/Vapes"));
 const Gummies = lazy(() => import("./pages/Gummies"));
-const Microdose = lazy(() => import("./pages/Microdose"));
+const Mushrooms = lazy(() => import("./pages/Mushrooms"));
 const ProductDetail = lazy(() => import("./components/ProductDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -26,7 +26,7 @@ function App() {
             <Route path="/hemp-flower" element={<HempFlower />} />
             <Route path="/vapes" element={<Vapes />} />
             <Route path="/gummies" element={<Gummies />} />
-            <Route path="/microdose" element={<Microdose />} />
+            <Route path="/mushrooms" element={<Mushrooms />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

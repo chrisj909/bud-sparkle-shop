@@ -18,7 +18,7 @@ export const ProductGrid = () => {
         return <Cigarette className="w-3 h-3 md:w-4 md:h-4" />;
       case "Gummies":
         return <Candy className="w-3 h-3 md:w-4 md:h-4" />;
-      case "Microdose":
+      case "Mushrooms":
         return <Pill className="w-3 h-3 md:w-4 md:h-4" />;
       default:
         return null;
