@@ -1,13 +1,50 @@
 import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
-import { PRODUCTS, CATEGORIES } from "@/data/products";
+import { CATEGORIES } from "@/data/products";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProducts } from "@/lib/products";
 
 const Index = () => {
+  const { data: products = [], isLoading, error } = useQuery({
+    queryKey: ['products'],
+    queryFn: fetchProducts
+  });
+
   const getFeaturedProducts = (category: string) => {
-    return PRODUCTS.filter(product => product.category === category).slice(0, 4);
+    return products
+      .filter(product => product.category === category)
+      .slice(0, 4);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
+        <Header />
+        <div className="container mx-auto px-2 md:px-4 flex-grow">
+          <div className="flex items-center justify-center h-64">
+            Loading products...
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
+        <Header />
+        <div className="container mx-auto px-2 md:px-4 flex-grow">
+          <div className="flex items-center justify-center h-64 text-red-600">
+            Error loading products. Please try again later.
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">

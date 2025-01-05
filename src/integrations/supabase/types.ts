@@ -9,7 +9,54 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      products: {
+        Row: {
+          category: Database["public"]["Enums"]["product_category"]
+          category_type: string
+          cbd_content: string
+          created_at: string | null
+          description: string | null
+          id: string
+          image_url: string
+          name: string
+          personality: string
+          price: number
+          terpenes: string[] | null
+          thc_content: string
+          updated_at: string | null
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["product_category"]
+          category_type: string
+          cbd_content: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url: string
+          name: string
+          personality: string
+          price: number
+          terpenes?: string[] | null
+          thc_content: string
+          updated_at?: string | null
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["product_category"]
+          category_type?: string
+          cbd_content?: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string
+          name?: string
+          personality?: string
+          price?: number
+          terpenes?: string[] | null
+          thc_content?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -18,7 +65,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      product_category: "Hemp Flower" | "THCA Vapes" | "Gummies" | "Mushrooms"
     }
     CompositeTypes: {
       [_ in never]: never
