@@ -12,7 +12,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
       <Header />
       <div className="container mx-auto px-2 md:px-4">
-        {["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"].map((category) => (
+        {["Hemp Flower", "THCA Vapes", "Gummies", "Mushrooms"].map((category) => (
           <div key={category}>
             <div className="flex justify-between items-center mb-4 pt-4">
               <h2 className="text-2xl font-bold">{category}</h2>
