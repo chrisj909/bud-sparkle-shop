@@ -4,6 +4,7 @@ import { useCart } from "@/contexts/CartContext";
 import { ShoppingCart, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { CATEGORIES } from "@/data/products";
 import {
   Sheet,
   SheetContent,
@@ -15,9 +16,26 @@ import {
 const Index = () => {
   const { items, totalItems, totalPrice, removeItem } = useCart();
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Hemp Flower":
+        return "🌿";
+      case "THCA Vapes":
+        return "💨";
+      case "Gummies":
+        return "🍬";
+      case "Microdose":
+        return "💊";
+      default:
+        return "•";
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-accent to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
       <AgeVerificationModal />
+      
+      {/* Main Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -100,13 +118,31 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Product Navigation */}
+        <div className="border-t border-gray-100 bg-white/60">
+          <div className="container mx-auto px-4">
+            <nav className="flex items-center justify-center md:justify-start gap-8 py-3 overflow-x-auto scrollbar-hide">
+              {CATEGORIES.map((category) => (
+                <a
+                  key={category}
+                  href={`#${category.toLowerCase().replace(' ', '-')}`}
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap transition-colors"
+                >
+                  <span className="text-lg">{getCategoryIcon(category)}</span>
+                  <span>{category}</span>
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
       </header>
 
-      <main>
+      <main className="flex-grow">
         <ProductGrid />
       </main>
 
-      <footer className="border-t border-gray-100 mt-16">
+      <footer className="border-t border-gray-100 mt-auto">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
