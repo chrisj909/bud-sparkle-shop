@@ -1,117 +1,78 @@
-import React, { createContext, useContext, useState, useCallback, useMemo, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 interface CartItem {
   id: string;
   name: string;
   price: number;
-  quantity: number;
   image: string;
+  quantity?: number;
 }
 
 interface CartContextType {
   items: CartItem[];
-  addItem: (product: {
-    id: string;
-    name: string;
-    price: number;
-    image: string;
-  }) => void;
+  addItem: (item: CartItem) => void;
   removeItem: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
-  getItemQuantity: (id: string) => number;
-  totalItems: number;
-  totalPrice: number;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CART_STORAGE_KEY = 'hemp-house-cart';
-
-export function CartProvider({ children }: { children: React.ReactNode }) {
+export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
-    try {
-      const savedCart = localStorage.getItem(CART_STORAGE_KEY);
-      return savedCart ? JSON.parse(savedCart) : [];
-    } catch (error) {
-      console.error('Error loading cart from localStorage:', error);
-      return [];
-    }
+    const savedItems = localStorage.getItem("cart");
+    return savedItems ? JSON.parse(savedItems) : [];
   });
 
   useEffect(() => {
-    try {
-      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-    } catch (error) {
-      console.error('Error saving cart to localStorage:', error);
-    }
+    localStorage.setItem("cart", JSON.stringify(items));
   }, [items]);
 
-  const addItem = useCallback((product: {
-    id: string;
-    name: string;
-    price: number;
-    image: string;
-  }) => {
+  const addItem = (newItem: CartItem) => {
     setItems((currentItems) => {
-      const existingItem = currentItems.find((item) => item.id === product.id);
-      
+      const existingItem = currentItems.find((item) => item.id === newItem.id);
       if (existingItem) {
         return currentItems.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+          item.id === newItem.id
+            ? { ...item, quantity: (item.quantity || 1) + 1 }
             : item
         );
       }
-
-      return [...currentItems, { ...product, quantity: 1 }];
+      return [...currentItems, { ...newItem, quantity: 1 }];
     });
-  }, []);
+  };
 
-  const removeItem = useCallback((id: string) => {
+  const removeItem = (id: string) => {
     setItems((currentItems) =>
       currentItems.filter((item) => item.id !== id)
     );
-  }, []);
+  };
 
-  const clearCart = useCallback(() => {
+  const updateQuantity = (id: string, quantity: number) => {
+    setItems((currentItems) =>
+      currentItems.map((item) =>
+        item.id === id ? { ...item, quantity } : item
+      )
+    );
+  };
+
+  const clearCart = () => {
     setItems([]);
-  }, []);
-
-  const getItemQuantity = useCallback((id: string) => {
-    return items.find((item) => item.id === id)?.quantity || 0;
-  }, [items]);
-
-  const totalItems = useMemo(() => 
-    items.reduce((sum, item) => sum + item.quantity, 0),
-    [items]
-  );
-  
-  const totalPrice = useMemo(() => 
-    items.reduce((sum, item) => sum + item.price * item.quantity, 0),
-    [items]
-  );
-
-  const value = useMemo(() => ({
-    items,
-    addItem,
-    removeItem,
-    clearCart,
-    getItemQuantity,
-    totalItems,
-    totalPrice,
-  }), [items, addItem, removeItem, clearCart, getItemQuantity, totalItems, totalPrice]);
+  };
 
   return (
-    <CartContext.Provider value={value}>
+    <CartContext.Provider
+      value={{ items, addItem, removeItem, updateQuantity, clearCart }}
+    >
       {children}
     </CartContext.Provider>
   );
-}
+};
 
-export function useCart() {
+export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {
     throw new Error("useCart must be used within a CartProvider");
   }
   return context;
-}
+};

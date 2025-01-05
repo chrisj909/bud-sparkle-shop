@@ -14,17 +14,4 @@ export interface ProductType {
   updated_at?: string;
 }
 
-// Helper type for the frontend components that expect the old property names
-export interface ProductCardProps {
-  id: string;
-  name: string;
-  price: number;
-  image_url: string;
-  category: string;
-  thc_content: string;
-  cbd_content: string;
-  category_type: string;
-  terpenes: string[];
-  personality: string;
-  description?: string;
-}
+export interface ProductCardProps extends ProductType {}

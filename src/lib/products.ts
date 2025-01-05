@@ -5,13 +5,14 @@ const mapToProductCard = (product: ProductType): ProductCardProps => ({
   id: product.id,
   name: product.name,
   price: product.price,
-  image: product.image_url,
+  image_url: product.image_url,
   category: product.category,
-  thcContent: product.thc_content,
-  cbdContent: product.cbd_content,
+  thc_content: product.thc_content,
+  cbd_content: product.cbd_content,
   category_type: product.category_type,
   terpenes: product.terpenes,
   personality: product.personality,
+  description: product.description,
 });
 
 export async function fetchProducts(): Promise<ProductCardProps[]> {
