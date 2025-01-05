@@ -54,8 +54,8 @@ const Index = () => {
                   <span className="text-[#39FF14] font-bold text-3xl tracking-tight leading-none">H</span>
                 </div>
                 <div className="flex flex-col items-start">
-                  <p className="text-sm text-gray-800 font-medium leading-tight">Smoke Shop</p>
-                  <p className="text-sm text-gray-800 font-medium leading-tight">CBD + Vape</p>
+                  <p className="text-sm text-white font-medium leading-tight">Smoke Shop</p>
+                  <p className="text-sm text-white font-medium leading-tight">CBD + Vape</p>
                 </div>
               </Link>
             </div>
