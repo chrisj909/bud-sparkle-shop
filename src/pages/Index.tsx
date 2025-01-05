@@ -1,4 +1,4 @@
-import { ShoppingCart, Home, Info, Mail, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { ShoppingCart, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "@/data/products";
@@ -25,12 +25,26 @@ const Index = () => {
     }
   };
 
+  const scrollToSection = (categoryId: string) => {
+    const element = document.getElementById(categoryId);
+    if (element) {
+      const headerOffset = 120; // Account for fixed header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
       <AgeVerificationModal />
       
       {/* Main Header */}
-      <header className="sticky top-0 z-50 bg-[#221F26]/95 backdrop-blur-md border-b border-gray-800">
+      <header className="sticky top-0 z-50 bg-[#E5D5C0]/95 backdrop-blur-md border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-12">
@@ -40,30 +54,16 @@ const Index = () => {
                   <span className="text-[#39FF14] font-bold text-3xl tracking-tight leading-none">H</span>
                 </div>
                 <div className="flex flex-col items-start">
-                  <p className="text-sm text-white font-medium leading-tight">Smoke Shop</p>
-                  <p className="text-sm text-white font-medium leading-tight">CBD + Vape</p>
+                  <p className="text-sm text-gray-800 font-medium leading-tight">Smoke Shop</p>
+                  <p className="text-sm text-gray-800 font-medium leading-tight">CBD + Vape</p>
                 </div>
               </Link>
-              <nav className="hidden md:flex items-center gap-8">
-                <Link to="/" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white">
-                  <Home size={16} className="text-[#39FF14]" />
-                  <span>Home</span>
-                </Link>
-                <Link to="/about" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white">
-                  <Info size={16} className="text-[#39FF14]" />
-                  <span>About</span>
-                </Link>
-                <Link to="/contact" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white">
-                  <Mail size={16} className="text-[#39FF14]" />
-                  <span>Contact</span>
-                </Link>
-              </nav>
             </div>
             
             <div className="flex items-center gap-8">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="relative text-gray-400 hover:text-white">
+                  <Button variant="ghost" size="icon" className="relative text-gray-800 hover:text-gray-600">
                     <ShoppingCart className="h-5 w-5" />
                     {totalItems > 0 && (
                       <span className="absolute -top-2 -right-2 bg-[#39FF14] text-black text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -122,25 +122,18 @@ const Index = () => {
         </div>
 
         {/* Product Navigation */}
-        <div className="border-t border-gray-800 bg-[#221F26]/80">
+        <div className="border-t border-gray-300 bg-[#E5D5C0]/80">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-center md:justify-start gap-6 py-2 overflow-x-auto scrollbar-hide">
               {CATEGORIES.map((category) => (
-                <a
+                <button
                   key={category}
-                  href={`#${category.toLowerCase().replace(' ', '-')}`}
-                  className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white whitespace-nowrap transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.getElementById(category.toLowerCase().replace(' ', '-'));
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={() => scrollToSection(category.toLowerCase().replace(' ', '-'))}
+                  className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
                 >
                   <span className="text-base">{getCategoryIcon(category)}</span>
                   <span>{category}</span>
-                </a>
+                </button>
               ))}
             </nav>
           </div>
@@ -151,23 +144,23 @@ const Index = () => {
         <ProductGrid />
       </main>
 
-      <footer className="border-t border-gray-800 bg-[#221F26]/95 text-gray-400">
+      <footer className="border-t border-gray-300 bg-[#E5D5C0]/95 text-gray-800">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
               <span className="text-sm font-medium text-[#39FF14]">Hemp House</span>
-              <a href="tel:205.326.7888" className="text-sm text-gray-400 hover:text-white transition-colors">205.326.7888</a>
+              <a href="tel:205.326.7888" className="text-sm text-gray-800 hover:text-gray-600 transition-colors">205.326.7888</a>
               <span className="text-xs text-gray-500">© 2024 Hemp House. Must be 21 or older.</span>
             </div>
             
             <div className="flex items-center gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
