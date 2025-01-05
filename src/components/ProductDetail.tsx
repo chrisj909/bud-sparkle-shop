@@ -24,12 +24,19 @@ const ProductDetail = () => {
     });
   };
 
-  // Transform the product to match the expected format
+  // First use the original properties for the images
+  const productImages = {
+    main: product.image,
+    thumbnail1: product.image,
+    thumbnail2: product.image
+  };
+
+  // Then transform the product for the child components
   const transformedProduct = {
     ...product,
-    image: product.image_url,
-    thcContent: product.thc_content,
-    cbdContent: product.cbd_content
+    image: product.image,
+    thcContent: product.thcContent,
+    cbdContent: product.cbdContent
   };
 
   return (
@@ -43,7 +50,7 @@ const ProductDetail = () => {
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg md:rounded-xl shadow-lg">
               <img
-                src={product.image_url}
+                src={productImages.main}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
@@ -51,14 +58,14 @@ const ProductDetail = () => {
             <div className="hidden md:grid grid-cols-2 gap-4">
               <div className="aspect-square overflow-hidden rounded-md">
                 <img
-                  src={product.image_url}
+                  src={productImages.thumbnail1}
                   alt={`${product.name} thumbnail 1`}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square overflow-hidden rounded-md">
                 <img
-                  src={product.image_url}
+                  src={productImages.thumbnail2}
                   alt={`${product.name} thumbnail 2`}
                   className="w-full h-full object-cover"
                 />
