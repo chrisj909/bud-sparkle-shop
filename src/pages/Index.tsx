@@ -1,7 +1,7 @@
 import { AgeVerificationModal } from "@/components/AgeVerificationModal";
 import { ProductGrid } from "@/components/ProductGrid";
 import { useCart } from "@/contexts/CartContext";
-import { ShoppingCart, Facebook, Instagram, Discord } from "lucide-react";
+import { ShoppingCart, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -138,7 +138,7 @@ const Index = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="opacity-80 hover:opacity-100">
-                <Discord className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>

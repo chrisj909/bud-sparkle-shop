@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Discord } from "lucide-react";
+import { Facebook, Instagram, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -35,7 +35,7 @@ const Contact = () => {
                   <Instagram className="w-6 h-6" />
                 </a>
                 <a href="#" className="text-gray-600 hover:text-primary">
-                  <Discord className="w-6 h-6" />
+                  <MessageCircle className="w-6 h-6" />
                 </a>
               </div>
             </div>
