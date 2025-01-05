@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { PRODUCTS } from "@/data/products";
 import { useParams } from "react-router-dom";
-import { Cannabis, Star, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Percent } from "lucide-react";
+import { Cannabis, Star, ShoppingCart, LeafyGreen, ThumbsUp, Flower, Check, Percent, Leaf } from "lucide-react";
 
 export const ProductDetail = () => {
   const { id } = useParams();
