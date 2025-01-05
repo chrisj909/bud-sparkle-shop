@@ -1,4 +1,5 @@
 export const PRODUCTS = [
+  // Hemp Flower Products
   {
     id: "1",
     name: "Gumbo Runtz (8-10-24)",
@@ -129,4 +130,91 @@ export const PRODUCTS = [
     personality: "Grounding & Peaceful",
     description: "Strong pine notes with citrus undertones, providing a grounding and peaceful experience.",
   },
+  
+  // THCA Vapes
+  {
+    id: "11",
+    name: "Runtz Vape",
+    price: 39.99,
+    image: "https://images.unsplash.com/photo-1542219550-2da790bf52e9",
+    category: "THCA Vapes",
+    thcContent: "95% THCA",
+    cbdContent: "0%",
+    terpenes: ["Myrcene", "Limonene"],
+    category_type: "Hybrid",
+    personality: "Smooth & Potent",
+    description: "Premium THCA vape with authentic Runtz terpene profile.",
+  },
+  {
+    id: "12",
+    name: "Gelato Vape",
+    price: 39.99,
+    image: "https://images.unsplash.com/photo-1527661591475-5bcf1dae4b08",
+    category: "THCA Vapes",
+    thcContent: "92% THCA",
+    cbdContent: "0%",
+    terpenes: ["Caryophyllene", "Linalool"],
+    category_type: "Hybrid",
+    personality: "Sweet & Smooth",
+    description: "Gelato-inspired THCA vape with rich, creamy flavor.",
+  },
+
+  // Gummies
+  {
+    id: "21",
+    name: "Berry Blast Gummies",
+    price: 29.99,
+    image: "https://images.unsplash.com/photo-1620980776848-84ac10194945",
+    category: "Gummies",
+    thcContent: "500MG",
+    cbdContent: "0%",
+    terpenes: [],
+    category_type: "Edibles",
+    personality: "Sweet & Potent",
+    description: "Mixed berry flavored gummies with 25mg per piece.",
+  },
+  {
+    id: "22",
+    name: "Tropical Paradise Gummies",
+    price: 34.99,
+    image: "https://images.unsplash.com/photo-1620980776848-84ac10194945",
+    category: "Gummies",
+    thcContent: "1000MG",
+    cbdContent: "0%",
+    terpenes: [],
+    category_type: "Edibles",
+    personality: "Tropical & Strong",
+    description: "Tropical fruit medley gummies with 50mg per piece.",
+  },
+
+  // Microdose Mushrooms
+  {
+    id: "31",
+    name: "Golden Teacher Blend",
+    price: 49.99,
+    image: "https://images.unsplash.com/photo-1516044437274-45baa3386a03",
+    category: "Microdose",
+    thcContent: "250MG",
+    cbdContent: "0%",
+    terpenes: [],
+    category_type: "Mushrooms",
+    personality: "Clarity & Focus",
+    description: "Premium microdose capsules for enhanced cognitive function.",
+  },
+  {
+    id: "32",
+    name: "B+ Harmony Capsules",
+    price: 54.99,
+    image: "https://images.unsplash.com/photo-1516044437274-45baa3386a03",
+    category: "Microdose",
+    thcContent: "500MG",
+    cbdContent: "0%",
+    terpenes: [],
+    category_type: "Mushrooms",
+    personality: "Balance & Wellness",
+    description: "Balanced microdose formula for overall wellness.",
+  }
 ];
+
+export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"] as const;
+export type ProductCategory = typeof CATEGORIES[number];

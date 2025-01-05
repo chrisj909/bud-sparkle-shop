@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-import { Cannabis, ShoppingCart } from "lucide-react";
+import { Cannabis, ShoppingCart, Pill } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
@@ -22,6 +22,7 @@ export const ProductCard = ({
   image, 
   thcContent,
   cbdContent,
+  category,
   category_type
 }: ProductCardProps) => {
   const { toast } = useToast();
@@ -34,6 +35,18 @@ export const ProductCard = ({
       title: "Added to cart",
       description: `${name} has been added to your cart.`,
     });
+  };
+
+  const getContentIcon = () => {
+    switch (category) {
+      case "Hemp Flower":
+        return <Cannabis className="h-3 w-3 md:h-4 md:w-4" />;
+      case "Gummies":
+      case "Microdose":
+        return <Pill className="h-3 w-3 md:h-4 md:w-4" />;
+      default:
+        return <Cannabis className="h-3 w-3 md:h-4 md:w-4" />;
+    }
   };
 
   return (
@@ -53,7 +66,7 @@ export const ProductCard = ({
               ${price.toFixed(2)}
             </p>
             <div className="flex items-center gap-1 md:gap-2 text-xs md:text-sm text-gray-600">
-              <Cannabis className="h-3 w-3 md:h-4 md:w-4" />
+              {getContentIcon()}
               <span>{thcContent}</span>
             </div>
           </div>
