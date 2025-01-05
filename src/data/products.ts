@@ -1,7 +1,7 @@
 export const PRODUCTS = [
   {
     id: "1",
-    name: "Purple Haze CBD",
+    name: "Gumbo Runtz (8-10-24)",
     price: 44.95,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -10,11 +10,11 @@ export const PRODUCTS = [
     terpenes: ["Myrcene", "Pinene", "Caryophyllene"],
     category_type: "70% Sativa Dominant Hybrid",
     personality: "Energetic & Creative",
-    description: "A legendary strain now available in CBD form. This hemp flower offers an uplifting and creative experience with sweet berry notes and earthy undertones.",
+    description: "A legendary strain from Hemp House offering an uplifting and creative experience with sweet berry notes and earthy undertones.",
   },
   {
     id: "2",
-    name: "Sour Space Candy",
+    name: "Cotton Candy (8-16-24)",
     price: 39.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -27,7 +27,7 @@ export const PRODUCTS = [
   },
   {
     id: "3",
-    name: "Hawaiian Haze",
+    name: "Gelato (8-16-24)",
     price: 42.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -40,7 +40,7 @@ export const PRODUCTS = [
   },
   {
     id: "4",
-    name: "Bubba Kush",
+    name: "Presidential Kush (9-8-24)",
     price: 47.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -53,7 +53,7 @@ export const PRODUCTS = [
   },
   {
     id: "5",
-    name: "Lifter",
+    name: "9lb Hammer (9-8-24)",
     price: 41.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -66,7 +66,7 @@ export const PRODUCTS = [
   },
   {
     id: "6",
-    name: "Special Sauce",
+    name: "Pineapple Express (9-8-24)",
     price: 45.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -79,7 +79,7 @@ export const PRODUCTS = [
   },
   {
     id: "7",
-    name: "Cherry Wine",
+    name: "Dante's Inferno (9-25-24)",
     price: 43.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -92,7 +92,7 @@ export const PRODUCTS = [
   },
   {
     id: "8",
-    name: "Elektra",
+    name: "LSD (10-4-24)",
     price: 40.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -101,11 +101,11 @@ export const PRODUCTS = [
     terpenes: ["Myrcene", "Caryophyllene", "Pinene"],
     category_type: "55% Sativa Dominant",
     personality: "Focused & Alert",
-    description: "A energizing strain with pine and citrus notes, perfect for maintaining focus.",
+    description: "An energizing strain with pine and citrus notes, perfect for maintaining focus.",
   },
   {
     id: "9",
-    name: "Suver Haze",
+    name: "Gelato 41 (10-4-24)",
     price: 46.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",
@@ -118,7 +118,7 @@ export const PRODUCTS = [
   },
   {
     id: "10",
-    name: "Pine Walker",
+    name: "Venom OG (10-4-24)",
     price: 42.99,
     image: "/placeholder.svg",
     category: "Hemp Flower",

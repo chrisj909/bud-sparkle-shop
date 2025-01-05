@@ -131,10 +131,10 @@ export const ProductDetail = () => {
           </TabsList>
           
           <TabsContent value="description" className="mt-6 p-6 border rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">HAVE YOU MET ZAZA?</h2>
+            <h2 className="text-2xl font-bold mb-4">WELCOME TO HEMP HOUSE</h2>
             <div className="space-y-4 text-gray-700">
               <p>
-                As part of the ZAZA Exotic Indoor THCA Flower line, {product.name} is grown with meticulous care to ensure the highest quality. 
+                As part of the Hemp House Exotic Indoor THCA Flower line, {product.name} is grown with meticulous care to ensure the highest quality. 
                 These premium indoor buds are grown according to Living Soil cultivation standards to enhance their potency, flavor, and overall appeal.
               </p>
               <p>
