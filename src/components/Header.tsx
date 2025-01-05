@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Home, User, Mail, Leaf, Flower, Candy, Droplet, Mushroom, GlassWater, Cookie } from "lucide-react";
+import { ShoppingCart, Home, User, Mail, Leaf, Flower, Candy, Droplet, Sparkles, GlassWater, Cookie } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/contexts/CartContext";
@@ -20,7 +20,7 @@ export const Header = () => {
       case "Concentrates":
         return <Droplet className={iconSize} />;
       case "Mushrooms":
-        return <Mushroom className={iconSize} />;
+        return <Sparkles className={iconSize} />;
       case "Drinks":
         return <GlassWater className={iconSize} />;
       case "Snacks":

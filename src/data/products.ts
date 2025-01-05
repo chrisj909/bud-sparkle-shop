@@ -1,11 +1,27 @@
-export const PRODUCTS = [
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  subcategory: string;
+  thcContent: string;
+  cbdContent: string;
+  terpenes: string[];
+  category_type: string;
+  personality: string;
+  description: string;
+}
+
+export const PRODUCTS: Product[] = [
   // Hemp Flower Products
   {
     id: "1",
     name: "Gumbo Runtz (8-10-24)",
     price: 44.95,
     image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "32.5% THCA",
     cbdContent: "0.1%",
     terpenes: ["Myrcene", "Pinene", "Caryophyllene"],
@@ -18,7 +34,8 @@ export const PRODUCTS = [
     name: "Cotton Candy (8-16-24)",
     price: 39.99,
     image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "28.7% THCA",
     cbdContent: "0.1%",
     terpenes: ["Limonene", "Caryophyllene", "Humulene"],
@@ -31,7 +48,8 @@ export const PRODUCTS = [
     name: "Gelato (8-16-24)",
     price: 42.99,
     image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "35.2% THCA",
     cbdContent: "0.1%",
     terpenes: ["Myrcene", "Pinene", "Terpinolene"],
@@ -44,7 +62,8 @@ export const PRODUCTS = [
     name: "Presidential Kush (9-8-24)",
     price: 47.99,
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "37.8% THCA",
     cbdContent: "0.1%",
     terpenes: ["Myrcene", "Caryophyllene", "Linalool"],
@@ -57,7 +76,8 @@ export const PRODUCTS = [
     name: "9lb Hammer (9-8-24)",
     price: 41.99,
     image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "31.9% THCA",
     cbdContent: "0.1%",
     terpenes: ["Terpinolene", "Ocimene", "Caryophyllene"],
@@ -70,7 +90,8 @@ export const PRODUCTS = [
     name: "Pineapple Express (9-8-24)",
     price: 45.99,
     image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "29.4% THCA",
     cbdContent: "0.1%",
     terpenes: ["Farnesene", "Myrcene", "Bisabolol"],
@@ -83,7 +104,8 @@ export const PRODUCTS = [
     name: "Dante's Inferno (9-25-24)",
     price: 43.99,
     image: "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "33.6% THCA",
     cbdContent: "0.1%",
     terpenes: ["Myrcene", "Pinene", "Farnesene"],
@@ -96,7 +118,8 @@ export const PRODUCTS = [
     name: "LSD (10-4-24)",
     price: 40.99,
     image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "34.8% THCA",
     cbdContent: "0.1%",
     terpenes: ["Myrcene", "Caryophyllene", "Pinene"],
@@ -109,7 +132,8 @@ export const PRODUCTS = [
     name: "Gelato 41 (10-4-24)",
     price: 46.99,
     image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "36.2% THCA",
     cbdContent: "0.1%",
     terpenes: ["Caryophyllene", "Humulene", "Farnesene"],
@@ -122,7 +146,8 @@ export const PRODUCTS = [
     name: "Venom OG (10-4-24)",
     price: 42.99,
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-    category: "Hemp Flower",
+    category: "Hemp",
+    subcategory: "Flower",
     thcContent: "30.5% THCA",
     cbdContent: "0.1%",
     terpenes: ["Pinene", "Limonene", "Myrcene"],
@@ -138,6 +163,7 @@ export const PRODUCTS = [
     price: 39.99,
     image: "https://images.unsplash.com/photo-1542219550-2da790bf52e9",
     category: "THCA Vapes",
+    subcategory: "Vapes",
     thcContent: "95% THCA",
     cbdContent: "0%",
     terpenes: ["Myrcene", "Limonene"],
@@ -151,6 +177,7 @@ export const PRODUCTS = [
     price: 39.99,
     image: "https://images.unsplash.com/photo-1527661591475-5bcf1dae4b08",
     category: "THCA Vapes",
+    subcategory: "Vapes",
     thcContent: "92% THCA",
     cbdContent: "0%",
     terpenes: ["Caryophyllene", "Linalool"],
@@ -166,6 +193,7 @@ export const PRODUCTS = [
     price: 29.99,
     image: "https://images.unsplash.com/photo-1620980776848-84ac10194945",
     category: "Gummies",
+    subcategory: "Edibles",
     thcContent: "500MG",
     cbdContent: "0%",
     terpenes: [],
@@ -179,6 +207,7 @@ export const PRODUCTS = [
     price: 34.99,
     image: "https://images.unsplash.com/photo-1620980776848-84ac10194945",
     category: "Gummies",
+    subcategory: "Edibles",
     thcContent: "1000MG",
     cbdContent: "0%",
     terpenes: [],
@@ -194,6 +223,7 @@ export const PRODUCTS = [
     price: 49.99,
     image: "https://images.unsplash.com/photo-1516044437274-45baa3386a03",
     category: "Microdose",
+    subcategory: "Mushrooms",
     thcContent: "250MG",
     cbdContent: "0%",
     terpenes: [],
@@ -207,6 +237,7 @@ export const PRODUCTS = [
     price: 54.99,
     image: "https://images.unsplash.com/photo-1516044437274-45baa3386a03",
     category: "Microdose",
+    subcategory: "Mushrooms",
     thcContent: "500MG",
     cbdContent: "0%",
     terpenes: [],
@@ -216,5 +247,5 @@ export const PRODUCTS = [
   }
 ];
 
-export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"] as const;
+export const CATEGORIES = ["Hemp", "Mushrooms"] as const;
 export type ProductCategory = typeof CATEGORIES[number];
