@@ -10,8 +10,8 @@ export const ContactImage = () => {
       className="relative h-full w-full"
     >
       <img
-        src="/lovable-uploads/9ee2b4c9-5525-45e4-b911-bc6ed2802e94.png"
-        alt="Hemp House growing facility"
+        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
+        alt="Modern technological aesthetic"
         className="w-full h-[400px] object-cover rounded-2xl shadow-lg"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
