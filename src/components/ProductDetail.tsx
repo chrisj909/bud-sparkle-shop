@@ -23,17 +23,18 @@ export const ProductDetail = () => {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="container mx-auto px-4 md:px-8 py-4 md:py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {/* Image Section - Larger on mobile */}
         <div className="space-y-4">
-          <div className="aspect-square overflow-hidden rounded-lg">
+          <div className="aspect-square overflow-hidden rounded-lg md:rounded-xl shadow-lg">
             <img
               src={product.image}
               alt={product.name}
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="hidden md:grid grid-cols-2 gap-4">
             <div className="aspect-square overflow-hidden rounded-md">
               <img
                 src={product.image}
@@ -51,59 +52,64 @@ export const ProductDetail = () => {
           </div>
         </div>
         
+        {/* Product Info - Minimalistic on mobile */}
         <div className="space-y-6">
-          <div>
-            <h1 className="text-4xl font-bold mb-2">
+          <div className="text-center md:text-left">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2">
               {product.name}
             </h1>
-            <p className="text-2xl font-semibold text-primary-light">
+            <p className="text-xl md:text-2xl font-semibold text-primary-light">
               ${product.price.toFixed(2)}
             </p>
           </div>
           
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
+          {/* Product Details - Icon-based on mobile */}
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:space-y-4">
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <LeafyGreen className="h-5 w-5 text-green-500" />
-              <p>CATEGORY: {product.category_type}</p>
+              <p className="text-sm md:text-base">{product.category_type}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <Flower className="h-5 w-5 text-green-500" />
-              <p>MAJOR TERPENES: {product.terpenes.join(", ")}</p>
-            </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <Cannabis className="h-5 w-5 text-green-500" />
-              <p>THC CONTENT: {product.thcContent}</p>
+              <p className="text-sm md:text-base">{product.thcContent}</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <Flower className="h-5 w-5 text-green-500" />
+              <p className="text-sm md:text-base hidden md:block">MAJOR TERPENES: </p>
+              <p className="text-sm md:text-base">{product.terpenes.join(", ")}</p>
+            </div>
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <ThumbsUp className="h-5 w-5 text-green-500" />
-              <p>PERSONALITY: {product.personality}</p>
+              <p className="text-sm md:text-base hidden md:block">PERSONALITY: </p>
+              <p className="text-sm md:text-base">{product.personality}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-4 py-6">
+          {/* Quality Badges - Compact on mobile */}
+          <div className="grid grid-cols-4 gap-2 md:gap-4 py-4 md:py-6">
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
-                <Leaf className="w-10 h-10 text-primary stroke-[1.5]" />
+              <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-1 md:mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Leaf className="w-8 h-8 md:w-10 md:h-10 text-primary stroke-[1.5]" />
               </div>
-              <p className="text-sm">Organically Grown</p>
+              <p className="text-xs md:text-sm">Organic</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
-                <Flag className="w-10 h-10 text-primary stroke-[1.5]" />
+              <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-1 md:mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Flag className="w-8 h-8 md:w-10 md:h-10 text-primary stroke-[1.5]" />
               </div>
-              <p className="text-sm">Made in USA</p>
+              <p className="text-xs md:text-sm">USA</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
-                <Award className="w-10 h-10 text-primary stroke-[1.5]" />
+              <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-1 md:mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Award className="w-8 h-8 md:w-10 md:h-10 text-primary stroke-[1.5]" />
               </div>
-              <p className="text-sm">Premium Quality</p>
+              <p className="text-xs md:text-sm">Premium</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-2 bg-accent rounded-full flex items-center justify-center">
-                <Check className="w-10 h-10 text-primary stroke-[1.5]" />
+              <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-1 md:mb-2 bg-accent rounded-full flex items-center justify-center">
+                <Check className="w-8 h-8 md:w-10 md:h-10 text-primary stroke-[1.5]" />
               </div>
-              <p className="text-sm">Third Party Tested</p>
+              <p className="text-xs md:text-sm">Tested</p>
             </div>
           </div>
           
@@ -121,7 +127,8 @@ export const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="mt-12">
+      {/* Tabs Section - Hidden on mobile */}
+      <div className="hidden md:block mt-12">
         <Tabs defaultValue="description">
           <TabsList className="w-full grid grid-cols-4 bg-accent">
             <TabsTrigger value="description">Description</TabsTrigger>
