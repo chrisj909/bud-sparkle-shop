@@ -24,18 +24,26 @@ const ProductDetail = () => {
     });
   };
 
+  // Transform the product to match the expected format
+  const transformedProduct = {
+    ...product,
+    image: product.image_url,
+    thcContent: product.thc_content,
+    cbdContent: product.cbd_content
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <MobileProductView product={product} onAddToCart={handleAddToCart} />
+      <MobileProductView product={transformedProduct} onAddToCart={handleAddToCart} />
 
       <div className="hidden md:block flex-grow container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg md:rounded-xl shadow-lg">
               <img
-                src={product.image}
+                src={product.image_url}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
@@ -43,14 +51,14 @@ const ProductDetail = () => {
             <div className="hidden md:grid grid-cols-2 gap-4">
               <div className="aspect-square overflow-hidden rounded-md">
                 <img
-                  src={product.image}
+                  src={product.image_url}
                   alt={`${product.name} thumbnail 1`}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square overflow-hidden rounded-md">
                 <img
-                  src={product.image}
+                  src={product.image_url}
                   alt={`${product.name} thumbnail 2`}
                   className="w-full h-full object-cover"
                 />
@@ -58,7 +66,7 @@ const ProductDetail = () => {
             </div>
           </div>
           
-          <DesktopProductInfo product={product} onAddToCart={handleAddToCart} />
+          <DesktopProductInfo product={transformedProduct} onAddToCart={handleAddToCart} />
         </div>
 
         <div className="hidden md:block mt-12">

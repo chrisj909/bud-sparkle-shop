@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, ArrowLeft, Cannabis } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ProductType } from "@/types/product";
+import { ProductCardProps } from "@/types/product";
 
 interface MobileProductViewProps {
-  product: ProductType;
+  product: ProductCardProps;
   onAddToCart: () => void;
 }
 

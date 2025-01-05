@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ProductType } from "@/types/product";
+import { ProductCardProps } from "@/types/product";
 import { LeafyGreen, Cannabis, Flower, ThumbsUp, Leaf, Flag, Award, Check, ShoppingCart } from "lucide-react";
 
 interface DesktopProductInfoProps {
-  product: ProductType;
+  product: ProductCardProps;
   onAddToCart: () => void;
 }
 
