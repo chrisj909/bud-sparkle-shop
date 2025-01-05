@@ -122,20 +122,12 @@ export const ProductDetail = () => {
       </div>
 
       <div className="mt-12">
-        <Tabs defaultValue="description" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-accent">
-            <TabsTrigger value="description" className="text-sm md:text-base">
-              Description
-            </TabsTrigger>
-            <TabsTrigger value="lab-results" className="text-sm md:text-base">
-              Lab Results Page
-            </TabsTrigger>
-            <TabsTrigger value="faqs" className="text-sm md:text-base">
-              FAQs - THCA Flower
-            </TabsTrigger>
-            <TabsTrigger value="shipping" className="text-sm md:text-base">
-              Processing & Shipping Times
-            </TabsTrigger>
+        <Tabs defaultValue="description">
+          <TabsList className="w-full grid grid-cols-4 bg-accent">
+            <TabsTrigger value="description">Description</TabsTrigger>
+            <TabsTrigger value="lab-results">Lab Results</TabsTrigger>
+            <TabsTrigger value="faqs">FAQs</TabsTrigger>
+            <TabsTrigger value="shipping">Shipping</TabsTrigger>
           </TabsList>
           
           <TabsContent value="description" className="mt-6 p-6 border rounded-lg">
