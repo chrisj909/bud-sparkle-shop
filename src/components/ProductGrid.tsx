@@ -27,22 +27,6 @@ export const ProductGrid = () => {
 
   return (
     <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
-      <div className="flex gap-1 md:gap-4 mb-2 md:mb-8 overflow-x-auto pb-2 scrollbar-hide">
-        {CATEGORIES.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-2 md:px-4 py-1 md:py-2 rounded-full transition-colors flex items-center gap-1 md:gap-2 whitespace-nowrap text-xs md:text-base ${
-              selectedCategory === category
-                ? "bg-primary text-white"
-                : "bg-accent hover:bg-accent-dark"
-            }`}
-          >
-            {getCategoryIcon(category)}
-            {category}
-          </button>
-        ))}
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} {...product} />
