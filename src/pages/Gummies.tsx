@@ -5,12 +5,7 @@ import { Footer } from "@/components/Footer";
 import { ProductType } from "@/types/product";
 
 const Gummies = () => {
-  const products = PRODUCTS.filter(product => product.category === "Gummies").map(product => ({
-    ...product,
-    image_url: product.image_url,
-    thc_content: product.thc_content,
-    cbd_content: product.cbd_content
-  })) as ProductType[];
+  const products = PRODUCTS.filter(product => product.category === "Gummies") as ProductType[];
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">

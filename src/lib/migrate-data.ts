@@ -4,13 +4,13 @@ import { ProductType } from "@/types/product";
 
 export async function migrateProducts() {
   for (const product of PRODUCTS) {
-    const productData: Omit<ProductType, 'id' | 'created_at' | 'updated_at'> = {
+    const productData = {
       name: product.name,
       price: product.price,
-      image_url: product.image,
-      category: product.category as ProductType['category'],
-      thc_content: product.thcContent,
-      cbd_content: product.cbdContent,
+      image_url: product.image_url,
+      category: product.category,
+      thc_content: product.thc_content,
+      cbd_content: product.cbd_content,
       terpenes: product.terpenes,
       category_type: product.category_type,
       personality: product.personality,
@@ -28,7 +28,3 @@ export async function migrateProducts() {
   }
   console.log('Products migration completed successfully');
 }
-
-// Run this in the browser console to migrate the data:
-// import { migrateProducts } from '@/lib/migrate-data';
-// migrateProducts().then(() => console.log('Migration complete'));
