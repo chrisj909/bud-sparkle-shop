@@ -35,7 +35,10 @@ const Index = () => {
             </div>
             
             <div className="flex items-center gap-4">
-              <p className="hidden md:block text-right text-white">Top Shelf Products & Unmatched Experience</p>
+              <div className="hidden md:block text-right text-white">
+                <p className="leading-snug">Top Shelf Products &</p>
+                <p className="leading-snug">Unmatched Experience</p>
+              </div>
               
               <Sheet>
                 <SheetTrigger asChild>
