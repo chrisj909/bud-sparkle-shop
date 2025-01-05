@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ShoppingCart, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { useCart } from "@/contexts/CartContext";
 import { ContactInfo } from "@/components/contact/ContactInfo";
-import { ContactImage } from "@/components/contact/ContactImage";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { SocialLinks } from "@/components/contact/SocialLinks";
 
 const Contact = () => {
@@ -128,7 +128,13 @@ const Contact = () => {
           </motion.div>
 
           {/* Right Column */}
-          <ContactImage />
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <ContactForm />
+          </motion.div>
         </div>
       </div>
 
