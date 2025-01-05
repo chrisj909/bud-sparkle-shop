@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { Cannabis, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   id: string;
@@ -24,8 +25,11 @@ export const ProductCard = ({
   category_type
 }: ProductCardProps) => {
   const { toast } = useToast();
+  const { addItem, getItemQuantity } = useCart();
+  const quantity = getItemQuantity(id);
 
   const handleAddToCart = () => {
+    addItem({ id, name, price, image });
     toast({
       title: "Added to cart",
       description: `${name} has been added to your cart.`,
@@ -64,7 +68,7 @@ export const ProductCard = ({
           shadow-lg hover:shadow-xl"
         >
           <ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />
-          <span>Add to Cart</span>
+          <span>{quantity > 0 ? `Add Another (${quantity} in cart)` : 'Add to Cart'}</span>
         </Button>
       </div>
     </div>
