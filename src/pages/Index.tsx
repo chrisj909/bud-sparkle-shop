@@ -22,10 +22,12 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-12">
-              <div>
-                <h1 className="text-lg font-medium text-gray-900">Hemp House</h1>
-                <p className="text-xs text-gray-500">Smoke Shop & Vape</p>
-              </div>
+              <Link to="/" className="hover:opacity-80 transition-opacity">
+                <div>
+                  <h1 className="text-lg font-medium text-gray-900">Hemp House</h1>
+                  <p className="text-xs text-gray-500">Smoke Shop & Vape</p>
+                </div>
+              </Link>
               <nav className="hidden md:flex items-center gap-8">
                 <Link to="/" className="text-sm text-gray-600 hover:text-gray-900">Home</Link>
                 <Link to="/about" className="text-sm text-gray-600 hover:text-gray-900">About</Link>
