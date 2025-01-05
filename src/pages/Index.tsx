@@ -30,7 +30,7 @@ const Index = () => {
       <AgeVerificationModal />
       
       {/* Main Header */}
-      <header className="sticky top-0 z-50 bg-[#1A1A1A]/95 backdrop-blur-md border-b border-gray-800">
+      <header className="sticky top-0 z-50 bg-[#221F26]/95 backdrop-blur-md border-b border-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-12">
@@ -122,7 +122,7 @@ const Index = () => {
         </div>
 
         {/* Product Navigation */}
-        <div className="border-t border-gray-800 bg-[#1A1A1A]/80">
+        <div className="border-t border-gray-800 bg-[#221F26]/80">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-center md:justify-start gap-6 py-2 overflow-x-auto scrollbar-hide">
               {CATEGORIES.map((category) => (
@@ -151,7 +151,7 @@ const Index = () => {
         <ProductGrid />
       </main>
 
-      <footer className="border-t border-gray-800 bg-[#1A1A1A]/95 text-gray-400">
+      <footer className="border-t border-gray-800 bg-[#221F26]/95 text-gray-400">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
