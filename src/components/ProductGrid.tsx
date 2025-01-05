@@ -26,10 +26,10 @@ export const ProductGrid = () => {
   };
 
   return (
-    <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
+    <div className="container mx-auto px-2 md:px-4">
       {CATEGORIES.map((category) => (
         <div key={category} id={category.toLowerCase().replace(/\s+/g, '-')}>
-          <h2 className="text-2xl font-bold mb-4 pt-8">{category}</h2>
+          <h2 className="text-2xl font-bold mb-4 pt-4">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
             {PRODUCTS.filter(product => product.category === category).map((product) => (
               <ProductCard key={product.id} {...product} />
