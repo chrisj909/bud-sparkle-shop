@@ -28,7 +28,7 @@ const Index = () => {
   const scrollToSection = (categoryId: string) => {
     const element = document.getElementById(categoryId);
     if (element) {
-      const headerOffset = 120;
+      const headerOffset = 120; // Account for fixed header height
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
