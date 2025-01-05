@@ -1,4 +1,4 @@
-import { ProductType } from "@/types/product";
+import { ProductType, ProductCategory } from "@/types/product";
 import { HEMP_FLOWER_PRODUCTS } from './hemp-flower';
 import { VAPE_PRODUCTS } from './vapes';
 import { GUMMY_PRODUCTS } from './gummies';
@@ -11,5 +11,4 @@ export const PRODUCTS: ProductType[] = [
   ...MICRODOSE_PRODUCTS,
 ];
 
-export const CATEGORIES = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"] as const;
-export type ProductCategory = typeof CATEGORIES[number];
+export const CATEGORIES: ProductCategory[] = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"];
