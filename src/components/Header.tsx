@@ -1,17 +1,34 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Home, User, Mail, Cannabis, Cigarette, Candy, Sparkles } from "lucide-react";
+import { ShoppingCart, Home, User, Mail, Leaf, Flower, Candy, Droplet, Mushroom, GlassWater, Cookie } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/contexts/CartContext";
+import { CATEGORIES } from "@/data/categories";
 
 export const Header = () => {
   const { items, totalItems, totalPrice, removeItem } = useCart();
+
+  const getCategoryIcon = (category: string, size: "sm" | "default" = "default") => {
+    const iconSize = size === "sm" ? "w-3 h-3 md:w-4 md:h-4" : "w-4 h-4";
+    switch (category) {
+      case "Hemp":
+        return <Leaf className={iconSize} />;
+      case "Flower":
+        return <Flower className={iconSize} />;
+      case "Edibles":
+        return <Candy className={iconSize} />;
+      case "Concentrates":
+        return <Droplet className={iconSize} />;
+      case "Mushrooms":
+        return <Mushroom className={iconSize} />;
+      case "Drinks":
+        return <GlassWater className={iconSize} />;
+      case "Snacks":
+        return <Cookie className={iconSize} />;
+      default:
+        return <Leaf className={iconSize} />;
+    }
+  };
 
   return (
     <>
@@ -109,34 +126,28 @@ export const Header = () => {
       <div className="border-t border-gray-300 bg-[#E5D5C0]/80">
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-center md:justify-start gap-6 py-2 overflow-x-auto scrollbar-hide">
-            <Link
-              to="/hemp-flower"
-              className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
-            >
-              <Cannabis className="w-4 h-4" />
-              <span>Hemp Flower</span>
-            </Link>
-            <Link
-              to="/vapes"
-              className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
-            >
-              <Cigarette className="w-4 h-4" />
-              <span>THCA Vapes</span>
-            </Link>
-            <Link
-              to="/gummies"
-              className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
-            >
-              <Candy className="w-4 h-4" />
-              <span>Gummies</span>
-            </Link>
-            <Link
-              to="/mushrooms"
-              className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>Mushrooms</span>
-            </Link>
+            {Object.values(CATEGORIES).map((category) => (
+              <div key={category.name} className="group relative">
+                <div className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors cursor-pointer">
+                  {getCategoryIcon(category.name)}
+                  <span>{category.name}</span>
+                </div>
+                <div className="absolute left-0 top-full pt-2 hidden group-hover:block">
+                  <div className="bg-white rounded-lg shadow-lg p-2 min-w-[150px]">
+                    {category.subcategories.map((subcategory) => (
+                      <Link
+                        key={subcategory.id}
+                        to={`/${subcategory.route}`}
+                        className="flex items-center gap-1.5 px-3 py-2 text-xs text-gray-800 hover:text-gray-600 hover:bg-gray-50 rounded-md whitespace-nowrap transition-colors"
+                      >
+                        {getCategoryIcon(subcategory.name, "sm")}
+                        <span>{subcategory.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </nav>
         </div>
       </div>
