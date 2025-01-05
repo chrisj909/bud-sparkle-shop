@@ -110,6 +110,7 @@ const Index = () => {
             <div className="flex items-center gap-6">
               <span className="text-sm font-medium text-gray-900">Hemp House</span>
               <a href="tel:205.326.7888" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">205.326.7888</a>
+              <span className="text-xs text-gray-400">© 2024 Hemp House. Must be 21 or older.</span>
             </div>
             
             <div className="flex items-center gap-4">
@@ -124,9 +125,6 @@ const Index = () => {
               </a>
             </div>
           </div>
-          <p className="text-xs text-center text-gray-400 mt-4">
-            © 2024 Hemp House. Must be 21 or older.
-          </p>
         </div>
       </footer>
     </div>
