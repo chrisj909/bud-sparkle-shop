@@ -15,7 +15,7 @@ export async function migrateProducts() {
     category_type: product.category_type,
     personality: product.personality,
     description: product.description
-  })) satisfies ProductType[];
+  })) as ProductType[];
 
   const { error } = await supabase
     .from('products')
