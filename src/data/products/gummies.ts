@@ -1,4 +1,6 @@
-export const GUMMY_PRODUCTS = [
+import { ProductType } from "@/types/product";
+
+export const GUMMY_PRODUCTS: ProductType[] = [
   {
     id: "21",
     name: "Berry Blast Gummies",
@@ -11,6 +13,8 @@ export const GUMMY_PRODUCTS = [
     category_type: "Edibles",
     personality: "Sweet & Potent",
     description: "Mixed berry flavored gummies with 25mg per piece.",
+    sizes: [{ size: "1", unit: "unit", price: 29.99 }],
+    in_stock: true
   },
   {
     id: "22",
@@ -24,5 +28,7 @@ export const GUMMY_PRODUCTS = [
     category_type: "Edibles",
     personality: "Tropical & Strong",
     description: "Tropical fruit medley gummies with 50mg per piece.",
+    sizes: [{ size: "1", unit: "unit", price: 34.99 }],
+    in_stock: true
   }
-];
+] as const satisfies ProductType[];

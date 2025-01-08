@@ -1,4 +1,6 @@
-export const VAPE_PRODUCTS = [
+import { ProductType } from "@/types/product";
+
+export const VAPE_PRODUCTS: ProductType[] = [
   {
     id: "11",
     name: "Runtz Vape",
@@ -11,6 +13,8 @@ export const VAPE_PRODUCTS = [
     category_type: "Hybrid",
     personality: "Smooth & Potent",
     description: "Premium THCA vape with authentic Runtz terpene profile.",
+    sizes: [{ size: "1", unit: "unit", price: 39.99 }],
+    in_stock: true
   },
   {
     id: "12",
@@ -24,5 +28,7 @@ export const VAPE_PRODUCTS = [
     category_type: "Hybrid",
     personality: "Sweet & Smooth",
     description: "Gelato-inspired THCA vape with rich, creamy flavor.",
+    sizes: [{ size: "1", unit: "unit", price: 39.99 }],
+    in_stock: true
   }
-];
+] as const satisfies ProductType[];
