@@ -12,8 +12,11 @@ export async function migrateProducts() {
           { size: "14", unit: "oz", price: product.price * 3.2 }
         ]
       : [{ size: "1", unit: "unit", price: product.price }],
-    in_stock: true
-  })) as ProductType[];
+    in_stock: true,
+    image_url: product.image_url,
+    thc_content: product.thc_content,
+    cbd_content: product.cbd_content,
+  })) as unknown as ProductType[];
 
   const { error } = await supabase
     .from('products')

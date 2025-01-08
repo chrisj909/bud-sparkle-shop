@@ -21,3 +21,5 @@ export type ProductType = {
   sizes: ProductSize[];
   in_stock: boolean;
 };
+
+export type ProductCardProps = ProductType;

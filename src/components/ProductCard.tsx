@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-import { Cannabis, ShoppingCart, Pill } from "lucide-react";
+import { ShoppingCart, Pill } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { ProductCardProps, ProductSize } from "@/types/product";
 import {
@@ -20,12 +20,12 @@ export const ProductCard = ({
   image_url, 
   thc_content,
   category,
-  sizes,
+  sizes = [],
   in_stock = true,
 }: ProductCardProps) => {
   const { toast } = useToast();
   const { addItem } = useCart();
-  const [selectedSize, setSelectedSize] = useState<ProductSize>(sizes[0]);
+  const [selectedSize, setSelectedSize] = useState<ProductSize>(sizes[0] || { size: "1", unit: "unit", price });
 
   const handleAddToCart = () => {
     addItem({ 
