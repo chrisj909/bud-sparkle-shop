@@ -9,6 +9,6 @@ export const PRODUCTS = [
   ...VAPE_PRODUCTS,
   ...GUMMY_PRODUCTS,
   ...MICRODOSE_PRODUCTS,
-] as const satisfies ProductType[];
+] satisfies ProductType[];
 
-export const CATEGORIES: ProductCategory[] = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"];
+export const CATEGORIES: ProductCategory[] = ["Hemp Flower", "THCA Vapes", "Gummies", "Mushrooms"];
