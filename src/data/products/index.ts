@@ -2,7 +2,7 @@ import { ProductType, ProductCategory } from "@/types/product";
 import { HEMP_FLOWER_PRODUCTS } from './hemp-flower';
 import { VAPE_PRODUCTS } from './vapes';
 import { GUMMY_PRODUCTS } from './gummies';
-import { MUSHROOM_PRODUCTS } from './microdose';
+import { MUSHROOM_PRODUCTS } from './mushrooms';
 
 export const PRODUCTS: ProductType[] = [
   ...HEMP_FLOWER_PRODUCTS,
