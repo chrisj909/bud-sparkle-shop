@@ -11,7 +11,7 @@ export type Database = {
     Tables: {
       products: {
         Row: {
-          category: Database["public"]["Enums"]["product_category"]
+          category: Database["public"]["Enums"]["product_category"] | null
           category_type: string
           cbd_content: string
           created_at: string | null
@@ -28,7 +28,7 @@ export type Database = {
           updated_at: string | null
         }
         Insert: {
-          category: Database["public"]["Enums"]["product_category"]
+          category?: Database["public"]["Enums"]["product_category"] | null
           category_type: string
           cbd_content: string
           created_at?: string | null
@@ -45,7 +45,7 @@ export type Database = {
           updated_at?: string | null
         }
         Update: {
-          category?: Database["public"]["Enums"]["product_category"]
+          category?: Database["public"]["Enums"]["product_category"] | null
           category_type?: string
           cbd_content?: string
           created_at?: string | null
@@ -71,7 +71,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      product_category: "Hemp Flower" | "THCA Vapes" | "Gummies" | "Mushrooms"
+      product_category: "Hemp Flower" | "Vapes" | "Gummies" | "Mushrooms"
     }
     CompositeTypes: {
       [_ in never]: never
