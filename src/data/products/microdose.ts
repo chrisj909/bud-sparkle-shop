@@ -1,4 +1,4 @@
-export const MICRODOSE_PRODUCTS = [
+export const MUSHROOM_PRODUCTS = [
   {
     id: "m1",
     name: "Golden Teacher Blend",
