@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Cannabis, Cigarette, Candy } from "lucide-react";
-import { Mushroom } from "@/components/icons/Mushroom";
 
 export const CategoryNav = () => {
   return (
@@ -25,13 +24,6 @@ export const CategoryNav = () => {
       >
         <Candy className="w-4 h-4" />
         <span>Gummies</span>
-      </Link>
-      <Link
-        to="/mushrooms"
-        className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
-      >
-        <Mushroom className="w-4 h-4" />
-        <span>Mushrooms</span>
       </Link>
     </nav>
   );
