@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { ProductCard } from "./ProductCard";
 import { CATEGORIES } from "@/data/products";
-import { Leaf, Cigarette, Candy, Pill } from "lucide-react";
+import { Leaf, Cigarette, Candy } from "lucide-react";
+import { Mushroom } from "./icons/Mushroom";
 import { ProductType } from "@/types/product";
 import { fetchProducts } from "@/lib/products";
 
@@ -20,7 +21,7 @@ export const ProductGrid = () => {
       case "Gummies":
         return <Candy className="w-3 h-3 md:w-4 md:h-4" />;
       case "Mushrooms":
-        return <Pill className="w-3 h-3 md:w-4 md:h-4" />;
+        return <Mushroom className="w-3 h-3 md:w-4 md:h-4" />;
       default:
         return null;
     }

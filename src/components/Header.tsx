@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Home, User, Mail, Cannabis, Cigarette, Candy, Pill } from "lucide-react";
+import { ShoppingCart, Home, User, Mail, Cannabis, Cigarette, Candy } from "lucide-react";
+import { Mushroom } from "./icons/Mushroom";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -134,7 +135,7 @@ export const Header = () => {
               to="/mushrooms"
               className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
             >
-              <Pill className="w-4 h-4" />
+              <Mushroom className="w-4 h-4" />
               <span>Mushrooms</span>
             </Link>
           </nav>

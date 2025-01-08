@@ -1,34 +1,38 @@
 import { ProductType } from "@/types/product";
 
-export const VAPE_PRODUCTS: ProductType[] = [
+export const VAPES_PRODUCTS: ProductType[] = [
   {
     id: "11",
     name: "Runtz Vape",
     price: 39.99,
     image_url: "https://images.unsplash.com/photo-1542219550-2da790bf52e9?w=800&auto=format&fit=crop",
-    category: "THCA Vapes",
-    thc_content: "95% THCA",
+    category: "Vapes",
+    thc_content: "92%",
     cbd_content: "0%",
     terpenes: ["Myrcene", "Limonene"],
     category_type: "Hybrid",
-    personality: "Smooth & Potent",
-    description: "Premium THCA vape with authentic Runtz terpene profile.",
-    sizes: [{ size: "1", unit: "unit", price: 39.99 }],
+    personality: "Energetic",
+    description: "Experience the sweet and fruity flavors of Runtz in this high-potency vape.",
+    sizes: [
+      { size: "1", unit: "gram", price: 39.99 }
+    ],
     in_stock: true
   },
   {
     id: "12",
-    name: "Gelato Vape",
-    price: 39.99,
-    image_url: "https://images.unsplash.com/photo-1527661591475-5bcf1dae4b08?w=800&auto=format&fit=crop",
-    category: "THCA Vapes",
-    thc_content: "92% THCA",
+    name: "Blue Dream Vape",
+    price: 44.99,
+    image_url: "https://images.unsplash.com/photo-1542219550-2da790bf52e9?w=800&auto=format&fit=crop",
+    category: "Vapes",
+    thc_content: "89%",
     cbd_content: "0%",
-    terpenes: ["Caryophyllene", "Linalool"],
+    terpenes: ["Pinene", "Myrcene"],
     category_type: "Hybrid",
-    personality: "Sweet & Smooth",
-    description: "Gelato-inspired THCA vape with rich, creamy flavor.",
-    sizes: [{ size: "1", unit: "unit", price: 39.99 }],
+    personality: "Balanced",
+    description: "A balanced hybrid vape with sweet berry aroma and smooth vapor.",
+    sizes: [
+      { size: "1", unit: "gram", price: 44.99 }
+    ],
     in_stock: true
   }
-] as const satisfies ProductType[];
+];
