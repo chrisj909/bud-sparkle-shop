@@ -20,6 +20,12 @@ export type ProductType = {
   description: string;
   sizes: ProductSize[];
   in_stock: boolean;
+  // Add the new properties that match our database schema
+  additional_images?: string[];
+  effects?: string[];
+  usage_instructions?: string | null;
+  lab_results?: string | null;
+  additional_info?: string | null;
 };
 
 export type ProductCardProps = ProductType;
