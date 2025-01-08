@@ -18,9 +18,11 @@ export type Database = {
           description: string | null
           id: string
           image_url: string
+          in_stock: boolean | null
           name: string
           personality: string
           price: number
+          sizes: Json | null
           terpenes: string[] | null
           thc_content: string
           updated_at: string | null
@@ -33,9 +35,11 @@ export type Database = {
           description?: string | null
           id?: string
           image_url: string
+          in_stock?: boolean | null
           name: string
           personality: string
           price: number
+          sizes?: Json | null
           terpenes?: string[] | null
           thc_content: string
           updated_at?: string | null
@@ -48,9 +52,11 @@ export type Database = {
           description?: string | null
           id?: string
           image_url?: string
+          in_stock?: boolean | null
           name?: string
           personality?: string
           price?: number
+          sizes?: Json | null
           terpenes?: string[] | null
           thc_content?: string
           updated_at?: string | null

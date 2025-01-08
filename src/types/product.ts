@@ -1,5 +1,11 @@
 export type ProductCategory = "Hemp Flower" | "THCA Vapes" | "Gummies" | "Microdose";
 
+export interface ProductSize {
+  size: string;
+  unit: string;
+  price: number;
+}
+
 export interface ProductType {
   id: string;
   name: string;
@@ -14,6 +20,8 @@ export interface ProductType {
   description?: string;
   created_at?: string;
   updated_at?: string;
+  sizes: ProductSize[];
+  in_stock?: boolean;
 }
 
 export type ProductCardProps = ProductType;
