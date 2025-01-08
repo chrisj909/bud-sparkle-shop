@@ -56,15 +56,9 @@ const Index = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-accent to-accent/50 py-8">
         <div className="container mx-auto text-center px-4">
-          <h1 className="text-3xl md:text-5xl font-bold text-primary mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-primary">
             Premium Quality CBD + Vape Products
           </h1>
-          <Link 
-            to="/hemp-flower" 
-            className="inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-hover transition-colors"
-          >
-            Shop Now
-          </Link>
         </div>
       </div>
 
