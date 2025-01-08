@@ -19,7 +19,7 @@ export const MainNav = () => {
         className="flex items-center gap-2 text-sm text-gray-800 hover:text-gray-600"
       >
         <ExternalLink className="w-4 h-4" />
-        <span>Old Site</span>
+        <span>Our Story</span>
       </a>
     </nav>
   );
