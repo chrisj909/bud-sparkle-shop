@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "@/lib/products";
+import { ShieldCheck, Package, Leaf, Truck } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -122,27 +123,31 @@ const Index = () => {
         ))}
       </div>
 
-      {/* Trust Badges */}
-      <div className="container mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <div className="text-4xl mb-4">🌿</div>
-          <h3 className="font-semibold mb-2">Premium Quality</h3>
-          <p className="text-sm text-gray-600">Carefully selected products</p>
-        </div>
-        <div>
-          <div className="text-4xl mb-4">🚚</div>
-          <h3 className="font-semibold mb-2">Fast Shipping</h3>
-          <p className="text-sm text-gray-600">Quick & secure delivery</p>
-        </div>
-        <div>
-          <div className="text-4xl mb-4">✨</div>
-          <h3 className="font-semibold mb-2">Lab Tested</h3>
-          <p className="text-sm text-gray-600">Verified quality & purity</p>
-        </div>
-        <div>
-          <div className="text-4xl mb-4">💯</div>
-          <h3 className="font-semibold mb-2">Satisfaction</h3>
-          <p className="text-sm text-gray-600">100% satisfaction guaranteed</p>
+      {/* Quality Icons */}
+      <div className="bg-white/95 backdrop-blur-sm border-t">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-4 py-6">
+            <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+              <ShieldCheck className="h-8 w-8 text-primary" />
+              <span className="text-sm font-medium">Quality Assured</span>
+              <p className="text-xs text-gray-600">Lab tested for purity</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+              <Package className="h-8 w-8 text-primary" />
+              <span className="text-sm font-medium">Premium Sourcing</span>
+              <p className="text-xs text-gray-600">Top-tier suppliers</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+              <Leaf className="h-8 w-8 text-primary" />
+              <span className="text-sm font-medium">Natural Products</span>
+              <p className="text-xs text-gray-600">Organic cultivation</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+              <Truck className="h-8 w-8 text-primary" />
+              <span className="text-sm font-medium">Fast Shipping</span>
+              <p className="text-xs text-gray-600">Quick delivery</p>
+            </div>
+          </div>
         </div>
       </div>
 
