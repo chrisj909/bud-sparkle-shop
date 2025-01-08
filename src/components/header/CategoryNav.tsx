@@ -17,7 +17,7 @@ export const CategoryNav = () => {
         className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
       >
         <Cigarette className="w-4 h-4" />
-        <span>THCA Vapes</span>
+        <span>Vapes</span>
       </Link>
       <Link
         to="/gummies"
@@ -27,11 +27,11 @@ export const CategoryNav = () => {
         <span>Gummies</span>
       </Link>
       <Link
-        to="/microdose"
+        to="/mushrooms"
         className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
       >
         <Mushroom className="w-4 h-4" />
-        <span>Microdose</span>
+        <span>Mushrooms</span>
       </Link>
     </nav>
   );
