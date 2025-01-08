@@ -54,35 +54,25 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <div className="relative h-[70vh] w-full overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=1920&auto=format&fit=crop')",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Premium Quality CBD + Vape Products
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8">
-              Discover our curated selection of premium products
-            </p>
-            <Link 
-              to="/hemp-flower" 
-              className="inline-block bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-colors"
-            >
-              Shop Now
-            </Link>
-          </div>
+      <div className="bg-gradient-to-b from-accent to-accent/50 py-16">
+        <div className="container mx-auto text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+            Premium Quality CBD + Vape Products
+          </h1>
+          <p className="text-lg md:text-xl text-primary/80 mb-8">
+            Discover our curated selection of premium products
+          </p>
+          <Link 
+            to="/hemp-flower" 
+            className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary-hover transition-colors"
+          >
+            Shop Now
+          </Link>
         </div>
       </div>
 
       {/* Categories Grid */}
-      <div className="container mx-auto px-4 -mt-20 relative z-10 mb-16">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {CATEGORIES.map((category) => (
             <Link
