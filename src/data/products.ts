@@ -186,35 +186,7 @@ export const PRODUCTS = [
     personality: "Tropical & Strong",
     description: "Tropical fruit medley gummies with 50mg per piece.",
   },
-
-  // Microdose Mushrooms
-  {
-    id: "31",
-    name: "Golden Teacher Blend",
-    price: 49.99,
-    image: "https://images.unsplash.com/photo-1516044437274-45baa3386a03",
-    category: "Microdose",
-    thcContent: "250MG",
-    cbdContent: "0%",
-    terpenes: [],
-    category_type: "Mushrooms",
-    personality: "Clarity & Focus",
-    description: "Premium microdose capsules for enhanced cognitive function.",
-  },
-  {
-    id: "32",
-    name: "B+ Harmony Capsules",
-    price: 54.99,
-    image: "https://images.unsplash.com/photo-1516044437274-45baa3386a03",
-    category: "Microdose",
-    thcContent: "500MG",
-    cbdContent: "0%",
-    terpenes: [],
-    category_type: "Mushrooms",
-    personality: "Balance & Wellness",
-    description: "Balanced microdose formula for overall wellness.",
-  }
 ];
 
-export const CATEGORIES = ["Hemp Flower", "Vapes", "Gummies", "Microdose"] as const;
+export const CATEGORIES = ["Hemp Flower", "Vapes", "Gummies"] as const;
 export type ProductCategory = typeof CATEGORIES[number];
