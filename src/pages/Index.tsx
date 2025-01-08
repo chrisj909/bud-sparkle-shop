@@ -69,7 +69,7 @@ const Index = () => {
             <Link
               key={category}
               to={`/${category.toLowerCase().replace(/\s+/g, '-')}`}
-              className="group relative h-48 overflow-hidden rounded-lg shadow-lg"
+              className="group relative h-48 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
@@ -80,14 +80,13 @@ const Index = () => {
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
               </div>
               <div className="relative h-full flex items-center justify-center">
-                <h3 className="text-2xl font-bold text-white">{category}</h3>
+                <h3 className="text-2xl font-bold text-white drop-shadow-lg">{category}</h3>
               </div>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Featured Products */}
       <div className="container mx-auto px-4 py-8 bg-gray-50">
         {CATEGORIES.map((category) => (
           <div key={category} className="mb-12 last:mb-0">
