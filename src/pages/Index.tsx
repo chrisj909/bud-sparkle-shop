@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "@/lib/products";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   const { data: products = [], isLoading, error } = useQuery({
@@ -51,7 +58,7 @@ const Index = () => {
       <Header />
       <div className="container mx-auto px-2 md:px-4 flex-grow">
         {CATEGORIES.map((category) => (
-          <div key={category}>
+          <div key={category} className="mb-8">
             <div className="flex justify-between items-center mb-4 pt-4">
               <h2 className="text-2xl font-bold">{category}</h2>
               <Link 
@@ -61,11 +68,25 @@ const Index = () => {
                 View All →
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
-              {getFeaturedProducts(category).map((product) => (
-                <ProductCard key={product.id} {...product} />
-              ))}
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="relative w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {getFeaturedProducts(category).map((product) => (
+                  <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <ProductCard {...product} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="hidden md:block">
+                <CarouselPrevious className="absolute -left-12 top-1/2" />
+                <CarouselNext className="absolute -right-12 top-1/2" />
+              </div>
+            </Carousel>
           </div>
         ))}
       </div>
