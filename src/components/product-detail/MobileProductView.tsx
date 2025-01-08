@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ProductType } from "@/types/product";
-import { ShoppingCart, Leaf, Brain, Clock, Beaker } from "lucide-react";
+import { ShoppingCart, Leaf, Brain, Clock, Beaker, ShieldCheck, Package, Truck } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface MobileProductViewProps {
@@ -119,6 +119,29 @@ export const MobileProductView = ({
             </div>
           </TabsContent>
         </Tabs>
+
+        <div className="grid grid-cols-2 gap-4 pt-6 border-t">
+          <div className="flex flex-col items-center text-center gap-2 p-3 bg-accent rounded-lg">
+            <ShieldCheck className="h-6 w-6 text-primary" />
+            <span className="text-sm font-medium">Quality Assured</span>
+            <p className="text-xs text-gray-600">Lab tested for purity</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-2 p-3 bg-accent rounded-lg">
+            <Package className="h-6 w-6 text-primary" />
+            <span className="text-sm font-medium">Premium Sourcing</span>
+            <p className="text-xs text-gray-600">Top-tier suppliers</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-2 p-3 bg-accent rounded-lg">
+            <Leaf className="h-6 w-6 text-primary" />
+            <span className="text-sm font-medium">Natural Products</span>
+            <p className="text-xs text-gray-600">Organic cultivation</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-2 p-3 bg-accent rounded-lg">
+            <Truck className="h-6 w-6 text-primary" />
+            <span className="text-sm font-medium">Fast Shipping</span>
+            <p className="text-xs text-gray-600">Quick delivery</p>
+          </div>
+        </div>
       </div>
     </div>
   );
