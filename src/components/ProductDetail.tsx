@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProductById } from "@/lib/products";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { useCart } from "@/contexts/CartContext";
 import { ProductType } from "@/types/product";
@@ -59,26 +58,30 @@ const ProductDetail = () => {
   };
 
   const QualityIcons = () => (
-    <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-8 py-8 border-t">
-      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
-        <ShieldCheck className="h-8 w-8 text-primary" />
-        <span className="text-sm font-medium">Quality Assured</span>
-        <p className="text-xs text-gray-600">Lab tested for purity</p>
-      </div>
-      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
-        <Package className="h-8 w-8 text-primary" />
-        <span className="text-sm font-medium">Premium Sourcing</span>
-        <p className="text-xs text-gray-600">Top-tier suppliers</p>
-      </div>
-      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
-        <Leaf className="h-8 w-8 text-primary" />
-        <span className="text-sm font-medium">Natural Products</span>
-        <p className="text-xs text-gray-600">Organic cultivation</p>
-      </div>
-      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
-        <Truck className="h-8 w-8 text-primary" />
-        <span className="text-sm font-medium">Fast Shipping</span>
-        <p className="text-xs text-gray-600">Quick delivery</p>
+    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t z-10">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 py-6">
+          <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+            <ShieldCheck className="h-8 w-8 text-primary" />
+            <span className="text-sm font-medium">Quality Assured</span>
+            <p className="text-xs text-gray-600">Lab tested for purity</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+            <Package className="h-8 w-8 text-primary" />
+            <span className="text-sm font-medium">Premium Sourcing</span>
+            <p className="text-xs text-gray-600">Top-tier suppliers</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+            <Leaf className="h-8 w-8 text-primary" />
+            <span className="text-sm font-medium">Natural Products</span>
+            <p className="text-xs text-gray-600">Organic cultivation</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+            <Truck className="h-8 w-8 text-primary" />
+            <span className="text-sm font-medium">Fast Shipping</span>
+            <p className="text-xs text-gray-600">Quick delivery</p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -86,7 +89,7 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <div className="flex-grow container mx-auto px-4 py-8">
+      <div className="flex-grow container mx-auto px-4 py-8 pb-[280px] md:pb-[200px]">
         <div className="hidden md:block">
           <div className="grid grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -116,16 +119,15 @@ const ProductDetail = () => {
               onAddToCart={handleAddToCart}
             />
           </div>
-          <QualityIcons />
         </div>
         <div className="md:hidden">
           <MobileProductView
             product={product as ProductType}
             onAddToCart={handleAddToCart}
           />
-          <QualityIcons />
         </div>
       </div>
+      <QualityIcons />
       <Footer />
     </div>
   );
