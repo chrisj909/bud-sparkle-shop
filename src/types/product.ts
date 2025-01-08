@@ -4,7 +4,7 @@ export type ProductSize = {
   price: number;
 };
 
-export type ProductCategory = "Hemp Flower" | "Vapes" | "Gummies" | "Mushrooms";
+export type ProductCategory = "Hemp Flower" | "THCA Vapes" | "Gummies" | "Microdose";
 
 export type ProductType = {
   id: string;
