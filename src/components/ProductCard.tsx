@@ -98,12 +98,16 @@ export const ProductCard = ({
               if (size) setSelectedSize(size);
             }}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full bg-white">
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border shadow-lg">
               {sizes.map((size) => (
-                <SelectItem key={`${size.size}${size.unit}`} value={`${size.size}${size.unit}`}>
+                <SelectItem 
+                  key={`${size.size}${size.unit}`} 
+                  value={`${size.size}${size.unit}`}
+                  className="hover:bg-accent focus:bg-accent"
+                >
                   {size.size}{size.unit} - ${size.price.toFixed(2)}
                 </SelectItem>
               ))}
