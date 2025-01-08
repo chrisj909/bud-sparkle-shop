@@ -27,12 +27,10 @@ const Index = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="container mx-auto px-2 md:px-4 flex-grow">
-          <div className="flex items-center justify-center h-64">
-            Loading products...
-          </div>
+        <div className="flex items-center justify-center h-64">
+          Loading products...
         </div>
         <Footer />
       </div>
@@ -41,12 +39,10 @@ const Index = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="container mx-auto px-2 md:px-4 flex-grow">
-          <div className="flex items-center justify-center h-64 text-red-600">
-            Error loading products. Please try again later.
-          </div>
+        <div className="flex items-center justify-center h-64 text-red-600">
+          Error loading products. Please try again later.
         </div>
         <Footer />
       </div>
@@ -54,16 +50,71 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-accent to-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="container mx-auto px-2 md:px-4 flex-grow">
+      
+      {/* Hero Section */}
+      <div className="relative h-[70vh] w-full overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=1920&auto=format&fit=crop')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Premium Quality CBD + Vape Products
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8">
+              Discover our curated selection of premium products
+            </p>
+            <Link 
+              to="/hemp-flower" 
+              className="inline-block bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-colors"
+            >
+              Shop Now
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Categories Grid */}
+      <div className="container mx-auto px-4 -mt-20 relative z-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {CATEGORIES.map((category) => (
+            <Link
+              key={category}
+              to={`/${category.toLowerCase().replace(/\s+/g, '-')}`}
+              className="group relative h-48 overflow-hidden rounded-lg shadow-lg"
+            >
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{
+                  backgroundImage: `url(${getFeaturedProducts(category)[0]?.image_url})`,
+                }}
+              >
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+              </div>
+              <div className="relative h-full flex items-center justify-center">
+                <h3 className="text-2xl font-bold text-white">{category}</h3>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Products */}
+      <div className="container mx-auto px-4 py-12 bg-gray-50">
         {CATEGORIES.map((category) => (
-          <div key={category} className="mb-8">
-            <div className="flex justify-between items-center mb-4 pt-4">
-              <h2 className="text-2xl font-bold">{category}</h2>
+          <div key={category} className="mb-16 last:mb-0">
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-3xl font-bold">{category}</h2>
               <Link 
                 to={`/${category.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-sm text-gray-600 hover:text-gray-800"
+                className="text-primary hover:text-primary-hover transition-colors"
               >
                 View All →
               </Link>
@@ -90,6 +141,31 @@ const Index = () => {
           </div>
         ))}
       </div>
+
+      {/* Trust Badges */}
+      <div className="container mx-auto px-4 py-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div className="text-4xl mb-4">🌿</div>
+          <h3 className="font-semibold mb-2">Premium Quality</h3>
+          <p className="text-sm text-gray-600">Carefully selected products</p>
+        </div>
+        <div>
+          <div className="text-4xl mb-4">🚚</div>
+          <h3 className="font-semibold mb-2">Fast Shipping</h3>
+          <p className="text-sm text-gray-600">Quick & secure delivery</p>
+        </div>
+        <div>
+          <div className="text-4xl mb-4">✨</div>
+          <h3 className="font-semibold mb-2">Lab Tested</h3>
+          <p className="text-sm text-gray-600">Verified quality & purity</p>
+        </div>
+        <div>
+          <div className="text-4xl mb-4">💯</div>
+          <h3 className="font-semibold mb-2">Satisfaction</h3>
+          <p className="text-sm text-gray-600">100% satisfaction guaranteed</p>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
