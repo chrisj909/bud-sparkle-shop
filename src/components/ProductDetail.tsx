@@ -9,6 +9,7 @@ import { useCart } from "@/contexts/CartContext";
 import { ProductType } from "@/types/product";
 import { DesktopProductInfo } from "./product-detail/DesktopProductInfo";
 import { MobileProductView } from "./product-detail/MobileProductView";
+import { ShieldCheck, Package, Leaf, Truck } from "lucide-react";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -57,6 +58,31 @@ const ProductDetail = () => {
     });
   };
 
+  const QualityIcons = () => (
+    <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-8 py-8 border-t">
+      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+        <ShieldCheck className="h-8 w-8 text-primary" />
+        <span className="text-sm font-medium">Quality Assured</span>
+        <p className="text-xs text-gray-600">Lab tested for purity</p>
+      </div>
+      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+        <Package className="h-8 w-8 text-primary" />
+        <span className="text-sm font-medium">Premium Sourcing</span>
+        <p className="text-xs text-gray-600">Top-tier suppliers</p>
+      </div>
+      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+        <Leaf className="h-8 w-8 text-primary" />
+        <span className="text-sm font-medium">Natural Products</span>
+        <p className="text-xs text-gray-600">Organic cultivation</p>
+      </div>
+      <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
+        <Truck className="h-8 w-8 text-primary" />
+        <span className="text-sm font-medium">Fast Shipping</span>
+        <p className="text-xs text-gray-600">Quick delivery</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -90,12 +116,14 @@ const ProductDetail = () => {
               onAddToCart={handleAddToCart}
             />
           </div>
+          <QualityIcons />
         </div>
         <div className="md:hidden">
           <MobileProductView
             product={product as ProductType}
             onAddToCart={handleAddToCart}
           />
+          <QualityIcons />
         </div>
       </div>
       <Footer />
