@@ -63,12 +63,27 @@ const ProductDetail = () => {
       <div className="flex-grow container mx-auto px-4 py-8">
         <div className="hidden md:block">
           <div className="grid grid-cols-2 gap-8">
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img
-                src={product.image_url}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="space-y-4">
+              <div className="aspect-square overflow-hidden rounded-lg">
+                <img
+                  src={product.image_url}
+                  alt={product.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              {product.additional_images && product.additional_images.length > 0 && (
+                <div className="grid grid-cols-2 gap-4">
+                  {product.additional_images.map((image, index) => (
+                    <div key={index} className="aspect-square overflow-hidden rounded-lg">
+                      <img
+                        src={image}
+                        alt={`${product.name} view ${index + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             <DesktopProductInfo
               product={product as ProductType}

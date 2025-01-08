@@ -11,14 +11,18 @@ export type Database = {
     Tables: {
       products: {
         Row: {
+          additional_images: string[] | null
+          additional_info: string | null
           category: Database["public"]["Enums"]["product_category"] | null
           category_type: string
           cbd_content: string
           created_at: string | null
           description: string | null
+          effects: string[] | null
           id: string
           image_url: string
           in_stock: boolean | null
+          lab_results: string | null
           name: string
           personality: string
           price: number
@@ -26,16 +30,21 @@ export type Database = {
           terpenes: string[] | null
           thc_content: string
           updated_at: string | null
+          usage_instructions: string | null
         }
         Insert: {
+          additional_images?: string[] | null
+          additional_info?: string | null
           category?: Database["public"]["Enums"]["product_category"] | null
           category_type: string
           cbd_content: string
           created_at?: string | null
           description?: string | null
+          effects?: string[] | null
           id?: string
           image_url: string
           in_stock?: boolean | null
+          lab_results?: string | null
           name: string
           personality: string
           price: number
@@ -43,16 +52,21 @@ export type Database = {
           terpenes?: string[] | null
           thc_content: string
           updated_at?: string | null
+          usage_instructions?: string | null
         }
         Update: {
+          additional_images?: string[] | null
+          additional_info?: string | null
           category?: Database["public"]["Enums"]["product_category"] | null
           category_type?: string
           cbd_content?: string
           created_at?: string | null
           description?: string | null
+          effects?: string[] | null
           id?: string
           image_url?: string
           in_stock?: boolean | null
+          lab_results?: string | null
           name?: string
           personality?: string
           price?: number
@@ -60,6 +74,7 @@ export type Database = {
           terpenes?: string[] | null
           thc_content?: string
           updated_at?: string | null
+          usage_instructions?: string | null
         }
         Relationships: []
       }
