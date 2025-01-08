@@ -11,7 +11,10 @@ export async function fetchProducts(): Promise<ProductType[]> {
     throw error;
   }
 
-  return data as ProductType[];
+  return data.map(product => ({
+    ...product,
+    sizes: product.sizes as ProductType['sizes']
+  })) as ProductType[];
 }
 
 export async function fetchProductsByCategory(category: ProductCategory): Promise<ProductType[]> {
@@ -25,7 +28,10 @@ export async function fetchProductsByCategory(category: ProductCategory): Promis
     throw error;
   }
 
-  return data as ProductType[];
+  return data.map(product => ({
+    ...product,
+    sizes: product.sizes as ProductType['sizes']
+  })) as ProductType[];
 }
 
 export async function fetchProductById(id: string): Promise<ProductType | null> {
@@ -40,5 +46,8 @@ export async function fetchProductById(id: string): Promise<ProductType | null> 
     throw error;
   }
 
-  return data as ProductType;
+  return data ? {
+    ...data,
+    sizes: data.sizes as ProductType['sizes']
+  } as ProductType : null;
 }

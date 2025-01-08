@@ -1,69 +1,80 @@
 import { ProductType } from "@/types/product";
 
-export const HEMP_FLOWER_PRODUCTS = [
+export const HEMP_FLOWER_PRODUCTS: ProductType[] = [
   {
     id: "1",
     name: "Gumbo Runtz (8-10-24)",
     price: 44.95,
     image_url: "https://images.unsplash.com/photo-1603909223429-69858cd6ce06?w=800&auto=format&fit=crop",
     category: "Hemp Flower",
-    thc_content: "32.5% THCA",
-    cbd_content: "0.1%",
-    terpenes: ["Myrcene", "Pinene", "Caryophyllene"],
-    category_type: "70% Sativa Dominant Hybrid",
-    personality: "Energetic & Creative",
-    description: "A legendary strain from Hemp House offering an uplifting and creative experience with sweet berry notes and earthy undertones.",
+    thc_content: "0.3%",
+    cbd_content: "18%",
+    terpenes: ["Myrcene", "Limonene", "Caryophyllene"],
+    category_type: "Hybrid",
+    personality: "Creative",
+    description: "A legendary strain from Hemp House offering an uplifting and creative experience with sweet and earthy notes.",
+    sizes: [
+      { size: "3.5", unit: "oz", price: 44.95 },
+      { size: "7", unit: "oz", price: 80.91 },
+      { size: "14", unit: "oz", price: 143.84 }
+    ],
+    in_stock: true
   },
   {
     id: "2",
-    name: "Cotton Candy (8-16-24)",
+    name: "Blue Dream",
     price: 39.99,
-    image_url: "https://images.unsplash.com/photo-1589140915708-20ff586fe767?w=800&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1514516872020-1c1e1e1e1e1e?w=800&auto=format&fit=crop",
     category: "Hemp Flower",
-    thc_content: "28.7% THCA",
+    thc_content: "21%",
     cbd_content: "0.1%",
-    terpenes: ["Limonene", "Caryophyllene", "Humulene"],
-    category_type: "50/50 Hybrid",
-    personality: "Balanced & Focused",
-    description: "A perfect balance of sweet and sour notes, this hemp flower provides a balanced effect ideal for any time of day.",
+    terpenes: ["Myrcene", "Pinene", "Caryophyllene"],
+    category_type: "Sativa",
+    personality: "Relaxed",
+    description: "A classic strain known for its balanced effects and sweet berry aroma.",
+    sizes: [
+      { size: "3.5", unit: "oz", price: 39.99 },
+      { size: "7", unit: "oz", price: 75.00 },
+      { size: "14", unit: "oz", price: 140.00 }
+    ],
+    in_stock: true
   },
   {
     id: "3",
-    name: "Gelato (8-16-24)",
-    price: 42.99,
-    image_url: "https://images.unsplash.com/photo-1587673956061-d21e983b8623?w=800&auto=format&fit=crop",
+    name: "OG Kush",
+    price: 49.99,
+    image_url: "https://images.unsplash.com/photo-1514516872020-1c1e1e1e1e1e?w=800&auto=format&fit=crop",
     category: "Hemp Flower",
-    thc_content: "35.2% THCA",
-    cbd_content: "0.1%",
-    terpenes: ["Myrcene", "Pinene", "Terpinolene"],
-    category_type: "60% Sativa Dominant",
-    personality: "Tropical & Uplifting",
-    description: "Tropical fruit notes meet earthy undertones in this uplifting strain that's perfect for daytime use.",
+    thc_content: "20%",
+    cbd_content: "0.2%",
+    terpenes: ["Limonene", "Caryophyllene", "Humulene"],
+    category_type: "Indica",
+    personality: "Euphoric",
+    description: "A potent strain with a unique flavor profile and relaxing effects.",
+    sizes: [
+      { size: "3.5", unit: "oz", price: 49.99 },
+      { size: "7", unit: "oz", price: 90.00 },
+      { size: "14", unit: "oz", price: 170.00 }
+    ],
+    in_stock: true
   },
   {
     id: "4",
-    name: "Presidential Kush (9-8-24)",
-    price: 47.99,
-    image_url: "https://images.unsplash.com/photo-1603551279839-003e7d0d3c51?w=800&auto=format&fit=crop",
+    name: "Pineapple Express",
+    price: 45.00,
+    image_url: "https://images.unsplash.com/photo-1514516872020-1c1e1e1e1e1e?w=800&auto=format&fit=crop",
     category: "Hemp Flower",
-    thc_content: "37.8% THCA",
+    thc_content: "19%",
     cbd_content: "0.1%",
-    terpenes: ["Myrcene", "Caryophyllene", "Linalool"],
-    category_type: "80% Indica Dominant",
-    personality: "Relaxing & Calming",
-    description: "A classic strain known for its relaxing properties, featuring sweet coffee and chocolate notes.",
-  },
-  {
-    id: "5",
-    name: "9lb Hammer (9-8-24)",
-    price: 41.99,
-    image_url: "https://images.unsplash.com/photo-1603551931865-de30cbf36e91?w=800&auto=format&fit=crop",
-    category: "Hemp Flower",
-    thc_content: "31.9% THCA",
-    cbd_content: "0.1%",
-    terpenes: ["Terpinolene", "Ocimene", "Caryophyllene"],
-    category_type: "65% Sativa Dominant",
-    personality: "Energizing & Clear",
-    description: "True to its name, this strain provides an uplifting experience with fresh, citrusy notes.",
+    terpenes: ["Myrcene", "Limonene", "Caryophyllene"],
+    category_type: "Hybrid",
+    personality: "Happy",
+    description: "A tropical strain that provides a long-lasting energetic buzz.",
+    sizes: [
+      { size: "3.5", unit: "oz", price: 45.00 },
+      { size: "7", unit: "oz", price: 85.00 },
+      { size: "14", unit: "oz", price: 160.00 }
+    ],
+    in_stock: true
   }
-] as const satisfies ProductType[];
+];
