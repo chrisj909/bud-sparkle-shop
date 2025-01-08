@@ -50,7 +50,7 @@ export const ProductCard = ({
             <img
               src={image_url}
               alt={name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-50"
             />
           </div>
           <div className="p-4">
@@ -75,7 +75,7 @@ export const ProductCard = ({
           <img
             src={image_url}
             alt={name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 hover:scale-110"
           />
         </div>
         <div className="p-4">
