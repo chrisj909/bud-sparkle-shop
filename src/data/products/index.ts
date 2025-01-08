@@ -11,4 +11,4 @@ export const PRODUCTS: ProductType[] = [
   ...MICRODOSE_PRODUCTS,
 ];
 
-export const CATEGORIES: ProductCategory[] = ["Hemp Flower", "THCA Vapes", "Gummies", "Microdose"];
+export const CATEGORIES: ProductCategory[] = ["Hemp Flower", "Vapes", "Gummies", "Mushrooms"];
