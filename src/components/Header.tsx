@@ -122,7 +122,7 @@ export const Header = () => {
               className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
             >
               <Cigarette className="w-4 h-4" />
-              <span>Vapes</span>
+              <span>THCA Vapes</span>
             </Link>
             <Link
               to="/gummies"
@@ -132,11 +132,11 @@ export const Header = () => {
               <span>Gummies</span>
             </Link>
             <Link
-              to="/mushrooms"
+              to="/microdose"
               className="flex items-center gap-1.5 text-xs text-gray-800 hover:text-gray-600 whitespace-nowrap transition-colors"
             >
               <Mushroom className="w-4 h-4" />
-              <span>Mushrooms</span>
+              <span>Microdose</span>
             </Link>
           </nav>
         </div>
