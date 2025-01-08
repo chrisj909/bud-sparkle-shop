@@ -2,13 +2,13 @@ import { ProductType } from "@/types/product";
 
 export const HEMP_FLOWER_PRODUCTS: ProductType[] = [
   {
-    id: "1",
-    name: "Gumbo Runtz (8-10-24)",
+    id: "h1",
+    name: "Pablos Revenge",
     price: 44.95,
     image_url: "https://images.unsplash.com/photo-1603909223429-69858cd6ce06?w=800&auto=format&fit=crop",
     category: "Hemp Flower",
-    thc_content: "0.3%",
-    cbd_content: "18%",
+    thc_content: "32.5% THCA",
+    cbd_content: "0.1%",
     terpenes: ["Myrcene", "Limonene", "Caryophyllene"],
     category_type: "Hybrid",
     personality: "Creative",
@@ -77,4 +77,12 @@ export const HEMP_FLOWER_PRODUCTS: ProductType[] = [
     ],
     in_stock: true
   }
-];
+].map(product => ({
+  ...product,
+  sizes: product.sizes || [
+    { size: "3.5", unit: "oz", price: product.price },
+    { size: "7", unit: "oz", price: product.price * 1.8 },
+    { size: "14", unit: "oz", price: product.price * 3.2 }
+  ],
+  in_stock: product.in_stock ?? true
+}));
