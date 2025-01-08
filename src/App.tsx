@@ -29,7 +29,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/hemp-flower" element={<HempFlower />} />
-              <Route path={["/vapes", "/thca-vapes"]} element={<Vapes />} />
+              <Route path="/vapes" element={<Vapes />} />
+              <Route path="/thca-vapes" element={<Vapes />} />
               <Route path="/gummies" element={<Gummies />} />
               <Route path="/microdose" element={<Microdose />} />
               <Route path="/product/:id" element={<ProductDetail />} />
