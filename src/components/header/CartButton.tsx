@@ -78,8 +78,11 @@ export const CartButton = () => {
                     ${totalPrice.toFixed(2)}
                   </span>
                 </div>
-                <Button className="w-full py-6 text-base font-semibold">
-                  Checkout
+                <Button 
+                  className="w-full h-14 text-base font-semibold bg-[#F97316] hover:bg-[#EA580C] transition-colors duration-200 shadow-lg hover:shadow-xl rounded-lg flex items-center justify-center gap-2"
+                >
+                  <ShoppingCart className="h-5 w-5" />
+                  Checkout ${totalPrice.toFixed(2)}
                 </Button>
               </div>
             </div>
