@@ -54,7 +54,7 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-accent to-accent/50 py-8">
+      <div className="bg-gradient-to-b from-accent to-accent/50 py-6">
         <div className="container mx-auto text-center px-4">
           <h1 className="text-3xl md:text-5xl font-bold text-primary">
             Premium Quality CBD + Vape Products
@@ -63,7 +63,7 @@ const Index = () => {
       </div>
 
       {/* Categories Grid */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {CATEGORIES.map((category) => (
             <Link
@@ -88,10 +88,10 @@ const Index = () => {
       </div>
 
       {/* Featured Products */}
-      <div className="container mx-auto px-4 py-12 bg-gray-50">
+      <div className="container mx-auto px-4 py-8 bg-gray-50">
         {CATEGORIES.map((category) => (
-          <div key={category} className="mb-16 last:mb-0">
-            <div className="flex justify-between items-center mb-8">
+          <div key={category} className="mb-12 last:mb-0">
+            <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl font-bold">{category}</h2>
               <Link 
                 to={`/${category.toLowerCase().replace(/\s+/g, '-')}`}
@@ -124,7 +124,7 @@ const Index = () => {
       </div>
 
       {/* Trust Badges */}
-      <div className="container mx-auto px-4 py-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="container mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
           <div className="text-4xl mb-4">🌿</div>
           <h3 className="font-semibold mb-2">Premium Quality</h3>
