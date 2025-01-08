@@ -58,7 +58,7 @@ const ProductDetail = () => {
   };
 
   const QualityIcons = () => (
-    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t z-10">
+    <div className="bg-white/95 backdrop-blur-sm border-t">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 grid-cols-2 gap-4 py-6">
           <div className="flex flex-col items-center text-center gap-2 p-4 bg-accent/50 rounded-lg">
@@ -89,7 +89,7 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <div className="flex-grow container mx-auto px-4 py-8 pb-[280px] md:pb-[200px]">
+      <div className="flex-grow container mx-auto px-4 py-8">
         <div className="hidden md:block">
           <div className="grid grid-cols-2 gap-8">
             <div className="space-y-4">
