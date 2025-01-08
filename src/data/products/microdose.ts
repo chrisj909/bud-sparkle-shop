@@ -146,6 +146,7 @@ export const MICRODOSE_PRODUCTS = [
   },
 ].map(product => ({
   ...product,
+  category: "Mushrooms" as const,
   sizes: [{ size: "1", unit: "unit", price: product.price }],
   in_stock: true
 }));
