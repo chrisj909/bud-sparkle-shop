@@ -1,4 +1,4 @@
-export const vapeProducts = [
+export const VAPE_PRODUCTS = [
   {
     id: "11",
     name: "Runtz Vape",
